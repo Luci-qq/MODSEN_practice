@@ -1,0 +1,21 @@
+#:import TreeViewLayout libs.components.TreeViewLayout.TreeViewLayout
+#:import ImageLayout libs.components.ImageLayout.ImageLayout
+#:import FunctionalLayout libs.components.ImageLayout.FunctionalLayout
+
+<MainScreen>:
+    md_bg_color: 0.282, 0.254, 0.329
+    MDBoxLayout:
+        padding: 10
+        spacing: 10
+        TreeViewLayout:
+            id: treeview_layout
+            size_hint: 0.2, 0.9
+            pos_hint: {'center_y': 0.5}
+        FunctionalLayout:
+            id: functional_layout
+            size_hint: 0.25, 0.9
+            pos_hint: {'center_y': 0.5}
+        ImageLayout:
+            id: image_layout
+            size_hint: 0.55, 0.9
+            pos_hint: {'center_y': 0.5}

@@ -1,0 +1,51 @@
+#:import AddFileTreeview libs.components.Buttons.AddFileTreeview
+#:import AddFolderTreeview libs.components.Buttons.AddFolderTreeview
+#:import DeleteEntryTreeview libs.components.Buttons.DeleteEntryTreeview
+
+<TreeViewHandleLayout>:
+    add_file_button: _add_file_button
+    add_folder_button: _add_folder_button
+    delete_entry_button: _delete_entry_button
+
+    AddFileTreeview:
+        id: _add_file_button
+    AddFolderTreeview:
+        id: _add_folder_button
+    DeleteEntryTreeview:
+        id: _delete_entry_button
+   
+
+<TreeViewImage>:
+    root_options:
+        {"text": "Список файлов:"}
+    color: 0, 0, 0
+    
+    canvas.before:
+        Color:
+            rgba: 0, 0, 0, 0.2
+        RoundedRectangle:
+            pos: self.x, self.y
+            size: self.width + 10, self.height + 10
+            radius: [12, 12, 12, 12]
+        Color:
+            rgba: 0.335, 0.325, 0.43
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [10, 10, 10, 10]
+
+
+<TreeViewLayout>:
+    md_bg_color: 0.23, 0.2, 0.27
+    radius: [25,]
+    orientation: 'vertical'
+    spacing: 20
+    padding: 20
+    treeview_buttons: _treeview_buttons
+    treeview_image: _treeview_image
+    TreeViewHandleLayout:
+        adaptive_height: True
+        id: _treeview_buttons
+    TreeViewImage:
+        adaptive_height: True
+        id: _treeview_image
