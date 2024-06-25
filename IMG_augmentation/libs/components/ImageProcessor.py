@@ -8,6 +8,9 @@ class ImageProcessor:
         self.image = cv2.imread(image_path)
         self.pil_image = Image.open(image_path)
 
+    def _update_pil_image(self):
+        self.pil_image = Image.fromarray(cv2.cvtColor(self.image, cv2.COLOR_BGR2RGB))
+
     def resize(self, width, height):
         # Изменение размера изображения до заданной ширины и высоты
         return cv2.resize(self.image, (width, height))
@@ -27,19 +30,25 @@ class ImageProcessor:
         return cv2.flip(self.image, direction)
 
     def adjust_brightness(self, factor):
-        # Изменение яркости изображения (factor > 1 увеличивает, < 1 уменьшает)
+        self._update_pil_image()
         enhancer = ImageEnhance.Brightness(self.pil_image)
-        return np.array(enhancer.enhance(factor))
+        enhanced_image = enhancer.enhance(factor)
+        self.image = cv2.cvtColor(np.array(enhanced_image), cv2.COLOR_RGB2BGR)
+        return self.image
 
     def adjust_contrast(self, factor):
-        # Изменение контрастности изображения (factor > 1 увеличивает, < 1 уменьшает)
+        self._update_pil_image()
         enhancer = ImageEnhance.Contrast(self.pil_image)
-        return np.array(enhancer.enhance(factor))
+        enhanced_image = enhancer.enhance(factor)
+        self.image = cv2.cvtColor(np.array(enhanced_image), cv2.COLOR_RGB2BGR)
+        return self.image
 
     def adjust_saturation(self, factor):
-        # Изменение насыщенности изображения (factor > 1 увеличивает, < 1 уменьшает)
+        self._update_pil_image()
         enhancer = ImageEnhance.Color(self.pil_image)
-        return np.array(enhancer.enhance(factor))
+        enhanced_image = enhancer.enhance(factor)
+        self.image = cv2.cvtColor(np.array(enhanced_image), cv2.COLOR_RGB2BGR)
+        return self.image
 
     def add_noise(self, mean=0, std=25):
         # Добавление гауссовского шума к изображению

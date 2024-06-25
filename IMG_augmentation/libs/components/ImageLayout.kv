@@ -10,6 +10,20 @@
     rotate_angle: rotate_angle
     contrast_factor: contrast_factor
     brightness_factor: brightness_factor
+    flip_direction: flip_direction
+    saturation_factor: saturation_factor
+    noise_mean: noise_mean
+    noise_std: noise_std
+    translate_x: translate_x
+    translate_y: translate_y
+    shear_factor: shear_factor
+    stretch_x: stretch_x
+    stretch_y: stretch_y
+    random_crop_width: random_crop_width
+    random_crop_height: random_crop_height
+    text_overlay: text_overlay
+    text_position_x: text_position_x
+    text_position_y: text_position_y
 
     MDLabel:
         size_hint: 1.0, None
@@ -20,71 +34,237 @@
         font_style: 'Headline'
         role: 'small'
 
-    MDLabel:
-        size_hint: 1.0, None
-        height: self.texture_size[1]
-        text: "Crop"
-        color: 1,1,1,1
-        font_style: 'Title'
-        role: 'large'
+    MDScrollView:
+        do_scroll_x: False
+        do_scroll_y: True
+        size_hint: 1, 1
 
-    MDGridLayout:
-        cols: 2
-        size_hint: 1.0, None
-        height: "48dp"
-        spacing: 10
-        MDTextField:
-            id: crop_width
-            mode: 'filled'
-            MDTextFieldHintText:
-                text: 'Width'
-        MDTextField:
-            id: crop_height
-            mode: 'filled'
-            MDTextFieldHintText:
-                text: 'Height'
+        MDBoxLayout:
+            orientation: 'vertical'
+            size_hint_y: None
+            height: self.minimum_height
+            spacing: 10
 
-    MDLabel:
-        size_hint: 1.0, None
-        height: self.texture_size[1]
-        text: "Rotate"
-        color: 1,1,1,1
-        font_style: 'Title'
-        role: 'large'
+            MDLabel:
+                size_hint: 1.0, None
+                height: self.texture_size[1]
+                text: "Crop"
+                color: 1,1,1,1
+                font_style: 'Title'
+                role: 'large'
 
-    MDTextField:
-        id: rotate_angle
-        mode: 'filled'
-        MDTextFieldHintText:
-            text: 'Angle'
+            MDGridLayout:
+                cols: 2
+                size_hint: 1.0, None
+                height: "48dp"
+                spacing: 10
+                MDTextField:
+                    id: crop_width
+                    mode: 'filled'
+                    MDTextFieldHintText:
+                        text: 'Width'
+                MDTextField:
+                    id: crop_height
+                    mode: 'filled'
+                    MDTextFieldHintText:
+                        text: 'Height'
 
-    MDLabel:
-        size_hint: 1.0, None
-        height: self.texture_size[1]
-        text: "Contrast/Brightness"
-        color: 1,1,1,1
-        font_style: 'Title'
-        role: 'large'
+            MDLabel:
+                size_hint: 1.0, None
+                height: self.texture_size[1]
+                text: "Rotate"
+                color: 1,1,1,1
+                font_style: 'Title'
+                role: 'large'
 
-    MDGridLayout:
-        cols: 2
-        size_hint: 1.0, None
-        height: "48dp"
-        spacing: 10
-        MDTextField:
-            id: contrast_factor
-            mode: 'filled'
-            MDTextFieldHintText:
-                text: 'Factor(contrast)'
-        MDTextField:
-            id: brightness_factor
-            mode: 'filled'
-            MDTextFieldHintText:
-                text: 'Factor(brightness)'
+            MDTextField:
+                id: rotate_angle
+                mode: 'filled'
+                MDTextFieldHintText:
+                    text: 'Angle'
 
-    Widget:
-        size_hint_y: None
-        height: "15dp"
+            MDLabel:
+                size_hint: 1.0, None
+                height: self.texture_size[1]
+                text: "Flip"
+                color: 1,1,1,1
+                font_style: 'Title'
+                role: 'large'
+
+            MDTextField:
+                id: flip_direction
+                mode: 'filled'
+                MDTextFieldHintText:
+                    text: 'Direction (0, 1, or -1)'
+
+            MDLabel:
+                size_hint: 1.0, None
+                height: self.texture_size[1]
+                text: "Contrast/Brightness/Saturation"
+                color: 1,1,1,1
+                font_style: 'Title'
+                role: 'large'
+
+            MDGridLayout:
+                cols: 3
+                size_hint: 1.0, None
+                height: "48dp"
+                spacing: 10
+                MDTextField:
+                    id: contrast_factor
+                    mode: 'filled'
+                    MDTextFieldHintText:
+                        text: 'Contrast'
+                MDTextField:
+                    id: brightness_factor
+                    mode: 'filled'
+                    MDTextFieldHintText:
+                        text: 'Brightness'
+                MDTextField:
+                    id: saturation_factor
+                    mode: 'filled'
+                    MDTextFieldHintText:
+                        text: 'Saturation'
+
+            MDLabel:
+                size_hint: 1.0, None
+                height: self.texture_size[1]
+                text: "Add Noise"
+                color: 1,1,1,1
+                font_style: 'Title'
+                role: 'large'
+
+            MDGridLayout:
+                cols: 2
+                size_hint: 1.0, None
+                height: "48dp"
+                spacing: 10
+                MDTextField:
+                    id: noise_mean
+                    mode: 'filled'
+                    MDTextFieldHintText:
+                        text: 'Mean'
+                MDTextField:
+                    id: noise_std
+                    mode: 'filled'
+                    MDTextFieldHintText:
+                        text: 'Std Dev'
+
+            MDLabel:
+                size_hint: 1.0, None
+                height: self.texture_size[1]
+                text: "Translate"
+                color: 1,1,1,1
+                font_style: 'Title'
+                role: 'large'
+
+            MDGridLayout:
+                cols: 2
+                size_hint: 1.0, None
+                height: "48dp"
+                spacing: 10
+                MDTextField:
+                    id: translate_x
+                    mode: 'filled'
+                    MDTextFieldHintText:
+                        text: 'X'
+                MDTextField:
+                    id: translate_y
+                    mode: 'filled'
+                    MDTextFieldHintText:
+                        text: 'Y'
+
+            MDLabel:
+                size_hint: 1.0, None
+                height: self.texture_size[1]
+                text: "Shear"
+                color: 1,1,1,1
+                font_style: 'Title'
+                role: 'large'
+
+            MDTextField:
+                id: shear_factor
+                mode: 'filled'
+                MDTextFieldHintText:
+                    text: 'Shear Factor'
+
+            MDLabel:
+                size_hint: 1.0, None
+                height: self.texture_size[1]
+                text: "Stretch"
+                color: 1,1,1,1
+                font_style: 'Title'
+                role: 'large'
+
+            MDGridLayout:
+                cols: 2
+                size_hint: 1.0, None
+                height: "48dp"
+                spacing: 10
+                MDTextField:
+                    id: stretch_x
+                    mode: 'filled'
+                    MDTextFieldHintText:
+                        text: 'X Factor'
+                MDTextField:
+                    id: stretch_y
+                    mode: 'filled'
+                    MDTextFieldHintText:
+                        text: 'Y Factor'
+
+            MDLabel:
+                size_hint: 1.0, None
+                height: self.texture_size[1]
+                text: "Random Crop"
+                color: 1,1,1,1
+                font_style: 'Title'
+                role: 'large'
+
+            MDGridLayout:
+                cols: 2
+                size_hint: 1.0, None
+                height: "48dp"
+                spacing: 10
+                MDTextField:
+                    id: random_crop_width
+                    mode: 'filled'
+                    MDTextFieldHintText:
+                        text: 'Width'
+                MDTextField:
+                    id: random_crop_height
+                    mode: 'filled'
+                    MDTextFieldHintText:
+                        text: 'Height'
+
+            MDLabel:
+                size_hint: 1.0, None
+                height: self.texture_size[1]
+                text: "Add Text"
+                color: 1,1,1,1
+                font_style: 'Title'
+                role: 'large'
+
+            MDTextField:
+                id: text_overlay
+                mode: 'filled'
+                MDTextFieldHintText:
+                    text: 'Text'
+
+            MDGridLayout:
+                cols: 2
+                size_hint: 1.0, None
+                height: "48dp"
+                spacing: 10
+                MDTextField:
+                    id: text_position_x
+                    mode: 'filled'
+                    MDTextFieldHintText:
+                        text: 'X Position'
+                MDTextField:
+                    id: text_position_y
+                    mode: 'filled'
+                    MDTextFieldHintText:
+                        text: 'Y Position'
 
     MDGridLayout:
         cols: 3
@@ -115,16 +295,6 @@
                 icon: 'content-save'
             MDButtonText:
                 text: 'Save'
-
-    Widget:
-        size_hint_y: 1
-
-<ImageLayout>:
-    md_bg_color: 0.329, 0.305, 0.38
-    radius: [25,]
-
-    Widget:
-        size_hint_y: 1
 
 <ImageLayout>:
     md_bg_color: 0.329, 0.305, 0.38

@@ -17,6 +17,7 @@ class MainScreen(MDScreen):
         self.current_image = None
         self.image_processor = None
         self.temp_image_path = 'temp_image.png'
+        self.original_image_path = None  
         self.bind_widgets()
 
     def bind_widgets(self):
@@ -61,7 +62,6 @@ class MainScreen(MDScreen):
         selected_node = self.treeview.selected_node
         if selected_node:
             self.treeview.remove_node(selected_node)
-            
             if isinstance(selected_node, FileTreeViewLabel):
                 if self.current_image and self.current_image.source == selected_node.file_path:
                     self.clear_displayed_image()
@@ -109,7 +109,17 @@ class MainScreen(MDScreen):
         else:
             self.clear_displayed_image()
 
+    def select_image_from_treeview(self):
+        selected_node = self.treeview.selected_node
+        if isinstance(selected_node, FileTreeViewLabel):
+            file_path = selected_node.file_path
+            if self.is_image(file_path):
+                self.display_image(file_path)
+                return True
+        return False
+
     def display_image(self, file_path):
+        self.original_image_path = file_path
         if self.current_image:
             self.ids.image_layout.remove_widget(self.current_image)
         
@@ -122,30 +132,42 @@ class MainScreen(MDScreen):
         self.image_processor = ImageProcessor(file_path)
 
     def clear_changes(self):
-        if self.image_processor:
-            self.update_displayed_image(self.image_processor.image)
-            
+        if self.select_image_from_treeview():
             functional_layout = self.ids.get('functional_layout')
             if functional_layout:
                 functional_layout.clear_fields()
 
-        if os.path.exists(self.temp_image_path):
-            os.remove(self.temp_image_path)
+            if os.path.exists(self.temp_image_path):
+                os.remove(self.temp_image_path)
+        else:
+            print("No image selected in TreeView")
 
     def save_image(self):
-        if self.image_processor:
-            if not os.path.exists('augmented'):
-                os.makedirs('augmented')
+        if self.image_processor and hasattr(self, 'original_image_path'):
+            original_filename = os.path.basename(self.original_image_path)
             
-            original_filename = os.path.basename(self.current_image.source)
-            filename, ext = os.path.splitext(original_filename)
+            augmented_dir = os.path.join(os.getcwd(), 'augmented')
+            if not os.path.exists(augmented_dir):
+                os.makedirs(augmented_dir)
             
-            new_filename = f"{filename}_augmented{ext}"
+            save_path = os.path.join(augmented_dir, original_filename)
             
-            save_path = os.path.join('augmented', new_filename)
+            base, ext = os.path.splitext(save_path)
+            counter = 1
+            while os.path.exists(save_path):
+                save_path = f"{base}_{counter}{ext}"
+                counter += 1
             
             cv2.imwrite(save_path, self.image_processor.image)
-            print(f"Image saved to {save_path}")
+            
+            print(f"Image saved as {save_path}")
+
+            if self.current_image:
+                self.current_image.source = save_path
+                self.current_image.reload()
+
+        else:
+            print("No image to save or original image path not found")
 
         if os.path.exists(self.temp_image_path):
             os.remove(self.temp_image_path)
@@ -156,8 +178,7 @@ class MainScreen(MDScreen):
             height = int(height)
             left = (self.image_processor.image.shape[1] - width) // 2
             top = (self.image_processor.image.shape[0] - height) // 2
-            cropped_image = self.image_processor.crop(left, top, width, height)
-            self.update_displayed_image(cropped_image)
+            self.image_processor.image = self.image_processor.crop(left, top, width, height)
 
     def rotate_image(self, angle):
         if self.image_processor:
@@ -171,7 +192,6 @@ class MainScreen(MDScreen):
             self.update_displayed_image(image)
 
     def update_displayed_image(self, cv2_image):
-        self.image_processor.image = cv2_image
         cv2.imwrite(self.temp_image_path, cv2_image)
         if self.current_image:
             self.current_image.source = self.temp_image_path
@@ -183,16 +203,71 @@ class MainScreen(MDScreen):
     def apply_changes(self):
         functional_layout = self.ids.get('functional_layout')
         if functional_layout and self.image_processor:
+            # Crop
             width = functional_layout.crop_width.text
             height = functional_layout.crop_height.text
             if width and height:
                 self.crop_image(int(width), int(height))
 
+            # Rotate
             angle = functional_layout.rotate_angle.text
             if angle:
-                self.rotate_image(float(angle))
+                self.image_processor.image = self.image_processor.rotate(float(angle))
 
+            # Flip
+            flip_direction = functional_layout.flip_direction.text
+            if flip_direction:
+                self.image_processor.image = self.image_processor.flip(int(flip_direction))
+
+            # Adjust contrast, brightness, and saturation
             contrast = functional_layout.contrast_factor.text
             brightness = functional_layout.brightness_factor.text
-            if contrast and brightness:
-                self.adjust_contrast(float(contrast), float(brightness))
+            saturation = functional_layout.saturation_factor.text
+            if contrast:
+                self.image_processor.image = self.image_processor.adjust_contrast(float(contrast))
+            if brightness:
+                self.image_processor.image = self.image_processor.adjust_brightness(float(brightness))
+            if saturation:
+                self.image_processor.image = self.image_processor.adjust_saturation(float(saturation))
+
+            # Add noise
+            noise_mean = functional_layout.noise_mean.text
+            noise_std = functional_layout.noise_std.text
+            if noise_mean and noise_std:
+                self.image_processor.image = self.image_processor.add_noise(float(noise_mean), float(noise_std))
+
+            # Translate
+            translate_x = functional_layout.translate_x.text
+            translate_y = functional_layout.translate_y.text
+            if translate_x and translate_y:
+                self.image_processor.image = self.image_processor.translate(int(translate_x), int(translate_y))
+
+            # Shear
+            shear_factor = functional_layout.shear_factor.text
+            if shear_factor:
+                self.image_processor.image = self.image_processor.shear(float(shear_factor))
+
+            # Stretch
+            stretch_x = functional_layout.stretch_x.text
+            stretch_y = functional_layout.stretch_y.text
+            if stretch_x and stretch_y:
+                self.image_processor.image = self.image_processor.stretch(float(stretch_x), float(stretch_y))
+
+            # Random crop
+            random_crop_width = functional_layout.random_crop_width.text
+            random_crop_height = functional_layout.random_crop_height.text
+            if random_crop_width and random_crop_height:
+                self.image_processor.image = self.image_processor.random_crop(int(random_crop_width), int(random_crop_height))
+
+            # Add text
+            text_overlay = functional_layout.text_overlay.text
+            text_position_x = functional_layout.text_position_x.text
+            text_position_y = functional_layout.text_position_y.text
+            if text_overlay and text_position_x and text_position_y:
+                self.image_processor.image = self.image_processor.add_text(
+                    text_overlay, 
+                    (int(text_position_x), int(text_position_y))
+                )
+
+            # Update displayed image
+            self.update_displayed_image(self.image_processor.image)
