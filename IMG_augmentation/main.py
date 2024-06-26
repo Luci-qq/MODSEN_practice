@@ -17,6 +17,9 @@ class ImageAugmentationApp(MDApp):
         #TreeViewLayout
         Builder.load_file('libs/components/ui/TreeViewLayout.kv')
 
+        #ImageAugmentationLayout
+        Builder.load_file('libs/components/ui/ImageAugmentationLayout.kv')
+
         #ImageLayout
         Builder.load_file('libs/components/ui/ImageLayout.kv')
     
