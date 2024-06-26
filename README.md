@@ -12,8 +12,9 @@ The repository is organized to facilitate access to information and simplify nav
 
 Repo:
 
-- Courses (/Courses/README.MD)
-  -Http
-  -Git
+- Courses (Courses/README.MD)
+
+  - Http
+  - Git
 
 - TestTask(ImageAugmentation)
