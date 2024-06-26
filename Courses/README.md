@@ -59,6 +59,8 @@ ErrorClient Response - 404
 
 ### Main:
 
+#### Stage 1:
+
 - 1: Introduction to Git Commits
 
   ```plaintext
@@ -96,6 +98,8 @@ git checkout bugFix
 git rebase main
 ```
 
+#### Stage 2:
+
 - 1: Detach yo' HEAD
 
 ```plaintext
@@ -124,6 +128,8 @@ git checkout pushed
 git revert HEAD
 ```
 
+#### Stage 3:
+
 - 1: Cherry-pick Intro
 
 ```plaintext
@@ -135,6 +141,8 @@ git cherry-pick C3 C4 C7
 ```plaintext
 git rebase -i HEAD~4
 ```
+
+#### Stage 4:
 
 - 1: Grabbing Just 1 Commit
 
@@ -178,6 +186,8 @@ git tag v0 C1
   git commit
 ```
 
+#### Stage 5:
+
 - 1: Rebasing over 9000 times
 
 ```plaintext
@@ -204,6 +214,8 @@ git branch -f three C2
 ```
 
 ### Remote:
+
+#### Stage 1:
 
 - 1: Clone Intro
 
@@ -265,6 +277,8 @@ git reset --hard o/main
 git checkout -b feature C2
 git push origin feature
 ```
+
+#### Stage 2:
 
 - 1: Push Main!
 
