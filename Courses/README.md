@@ -59,7 +59,7 @@ ErrorClient Response - 404
 
 ### Main:
 
-#### Lvl 1:
+### 1.1:
 
 - 1: Introduction to Git Commits
 
@@ -100,7 +100,7 @@ git rebase main
 
 ![Lvl1](GIt/lvl1.png)
 
-#### Lvl 2:
+### 1.2:
 
 - 1: Detach yo' HEAD
 
@@ -132,7 +132,7 @@ git revert HEAD
 
 ![Lvl2](GIt/lvl2.png)
 
-#### Lvl 3:
+### 1.3:
 
 - 1: Cherry-pick Intro
 
@@ -148,7 +148,7 @@ git rebase -i HEAD~4
 
 ![Lvl3](GIt/lvl3.png)
 
-#### Lvl 4:
+### 1.4:
 
 - 1: Grabbing Just 1 Commit
 
@@ -194,7 +194,7 @@ git tag v0 C1
 
 ![Lvl4](GIt/lvl4.png)
 
-#### Lvl 5:
+### 1.5:
 
 - 1: Rebasing over 9000 times
 
@@ -225,7 +225,7 @@ git branch -f three C2
 
 ### Remote:
 
-#### Lvl 1:
+### 2.1:
 
 - 1: Clone Intro
 
@@ -290,7 +290,7 @@ git push origin feature
 
 ![Lvl1_remote](GIt/remote_lvl1.png)
 
-#### Lvl 2:
+#### 2.2:
 
 - 1: Push Main!
 
