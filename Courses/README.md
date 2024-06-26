@@ -98,7 +98,7 @@ git checkout bugFix
 git rebase main
 ```
 
-[Lvl1](Git/lvl1.png)
+![Lvl1](Git/lvl1.png)
 
 #### Lvl 2:
 
@@ -130,7 +130,7 @@ git checkout pushed
 git revert HEAD
 ```
 
-[Lvl2](Git/lvl2.png)
+![Lvl2](Git/lvl2.png)
 
 #### Lvl 3:
 
@@ -146,7 +146,7 @@ git cherry-pick C3 C4 C7
 git rebase -i HEAD~4
 ```
 
-[Lvl3](Git/lvl3.png)
+![Lvl3](Git/lvl3.png)
 
 #### Lvl 4:
 
@@ -192,7 +192,7 @@ git tag v0 C1
   git commit
 ```
 
-[Lvl4](Git/lvl4.png)
+![Lvl4](Git/lvl4.png)
 
 #### Lvl 5:
 
@@ -221,7 +221,7 @@ git cherry-pick C5 C4 C3 C2
 git branch -f three C2
 ```
 
-[Lvl5](Git/lvl5.png)
+![Lvl5](Git/lvl5.png)
 
 ### Remote:
 
@@ -288,7 +288,7 @@ git checkout -b feature C2
 git push origin feature
 ```
 
-[Lvl1_remote](Git/remote_lvl1.png)
+![Lvl1_remote](Git/remote_lvl1.png)
 
 #### Lvl 2:
 
@@ -359,4 +359,4 @@ git pull origin c3:foo
 git pull origin c2:side
 ```
 
-[Lvl1_remote](Git/remote_lvl2.png)
+![Lvl1_remote](Git/remote_lvl2.png)
