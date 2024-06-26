@@ -59,7 +59,7 @@ ErrorClient Response - 404
 
 ### Main:
 
-#### Stage 1:
+#### Lvl 1:
 
 - 1: Introduction to Git Commits
 
@@ -98,7 +98,9 @@ git checkout bugFix
 git rebase main
 ```
 
-#### Stage 2:
+[Lvl1](Git/lvl1.png)
+
+#### Lvl 2:
 
 - 1: Detach yo' HEAD
 
@@ -128,7 +130,9 @@ git checkout pushed
 git revert HEAD
 ```
 
-#### Stage 3:
+[Lvl2](Git/lvl2.png)
+
+#### Lvl 3:
 
 - 1: Cherry-pick Intro
 
@@ -142,7 +146,9 @@ git cherry-pick C3 C4 C7
 git rebase -i HEAD~4
 ```
 
-#### Stage 4:
+[Lvl3](Git/lvl3.png)
+
+#### Lvl 4:
 
 - 1: Grabbing Just 1 Commit
 
@@ -186,7 +192,9 @@ git tag v0 C1
   git commit
 ```
 
-#### Stage 5:
+[Lvl4](Git/lvl4.png)
+
+#### Lvl 5:
 
 - 1: Rebasing over 9000 times
 
@@ -213,9 +221,11 @@ git cherry-pick C5 C4 C3 C2
 git branch -f three C2
 ```
 
+[Lvl5](Git/lvl5.png)
+
 ### Remote:
 
-#### Stage 1:
+#### Lvl 1:
 
 - 1: Clone Intro
 
@@ -278,7 +288,9 @@ git checkout -b feature C2
 git push origin feature
 ```
 
-#### Stage 2:
+[Lvl1_remote](Git/remote_lvl1.png)
+
+#### Lvl 2:
 
 - 1: Push Main!
 
@@ -346,3 +358,5 @@ git fetch origin :bar
 git pull origin c3:foo
 git pull origin c2:side
 ```
+
+[Lvl1_remote](Git/remote_lvl2.png)
