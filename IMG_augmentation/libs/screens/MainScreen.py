@@ -2,7 +2,7 @@ from kivymd.uix.screen import MDScreen
 from kivymd.uix.filemanager import MDFileManager
 from kivy.uix.image import Image
 from libs.components.ui.TreeViewLabels import FileTreeViewLabel, FolderTreeViewLabel
-from libs.screens.MainScreenController import MainScreenController
+from libs.screens.controllers.MainScreenController import MainScreenController
 
 class MainScreen(MDScreen):
     def __init__(self, **kwargs):
@@ -31,14 +31,11 @@ class MainScreen(MDScreen):
 
         self.treeview.bind(selected_node=self.on_treeview_select)
 
-        functional_layout = self.ids.get('functional_layout')
-        if functional_layout:
-            functional_layout.crop_image = self.crop_image
-            functional_layout.rotate_image = self.rotate_image
-            functional_layout.adjust_contrast = self.adjust_contrast
-            functional_layout.save_image = self.save_image
-            functional_layout.apply_changes = self.apply_changes
-            functional_layout.clear_changes = self.clear_changes
+        img_augmentation_layout = self.ids.get('img_augmentation_layout')
+        if img_augmentation_layout:
+            img_augmentation_layout.clear_changes = self.clear_changes
+            img_augmentation_layout.apply_changes = self.apply_changes
+            img_augmentation_layout.save_image = self.save_image
 
         if self.ids.get('image_layout'): 
             self.ids.get('image_layout').height_label.text = 'IMG_Height: N/A'
@@ -78,7 +75,6 @@ class MainScreen(MDScreen):
         )
         self.ids.image_layout.add_widget(self.current_image)
 
-
     def update_image_source(self, source):
         if self.current_image:
             self.current_image.source = source
@@ -87,18 +83,9 @@ class MainScreen(MDScreen):
     def save_image(self):
         self.controller.save_image()
 
-    def crop_image(self, width, height):
-        self.controller.crop_image(width, height)
-
-    def rotate_image(self, angle):
-        self.controller.rotate_image(angle)
-
-    def adjust_contrast(self, contrast_factor=0, brightness_factor=0):
-        self.controller.adjust_contrast(contrast_factor, brightness_factor)
-
     def apply_changes(self):
-        functional_layout = self.ids.get('functional_layout')
-        self.controller.apply_changes(functional_layout)
+        img_augmentation_layout = self.ids.get('img_augmentation_layout')
+        self.controller.apply_changes(img_augmentation_layout)
 
     def clear_changes(self):
         self.controller.clear_changes()

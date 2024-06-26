@@ -150,21 +150,21 @@ class MainScreenController:
         self.update_image_size_labels()
         logger.debug("Displayed image updated")
 
-    def apply_changes(self, functional_layout):
+    def apply_changes(self, img_augmentation_layout):
         if not self.image_processor:
             logger.warning("No image processor available to apply changes")
             return
 
-        self._apply_crop(functional_layout)
-        self._apply_rotate(functional_layout)
-        self._apply_flip(functional_layout)
-        self._apply_adjustments(functional_layout)
-        self._apply_noise(functional_layout)
-        self._apply_translate(functional_layout)
-        self._apply_shear(functional_layout)
-        self._apply_stretch(functional_layout)
-        self._apply_random_crop(functional_layout)
-        self._apply_text_overlay(functional_layout)
+        self._apply_crop(img_augmentation_layout)
+        self._apply_rotate(img_augmentation_layout)
+        self._apply_flip(img_augmentation_layout)
+        self._apply_adjustments(img_augmentation_layout)
+        self._apply_noise(img_augmentation_layout)
+        self._apply_translate(img_augmentation_layout)
+        self._apply_shear(img_augmentation_layout)
+        self._apply_stretch(img_augmentation_layout)
+        self._apply_random_crop(img_augmentation_layout)
+        self._apply_text_overlay(img_augmentation_layout)
 
         self._update_displayed_image(self.image_processor.image)
         self.update_image_size_labels()
@@ -232,9 +232,9 @@ class MainScreenController:
 
     def clear_changes(self):
         if self._select_image_from_treeview():
-            functional_layout = self.view.ids.get('functional_layout')
-            if functional_layout:
-                functional_layout.clear_fields()
+            img_augmentation_layout = self.view.ids.get('img_augmentation_layout')
+            if img_augmentation_layout:
+                img_augmentation_layout.clear_fields()
 
             if os.path.exists(TEMP_IMAGE_PATH):
                 os.remove(TEMP_IMAGE_PATH)
