@@ -59,8 +59,274 @@ ErrorClient Response - 404
 
 Main:
 
-- Introduction to Git Commits:
-  - ```plaintext
-      git commit
-      git commit
-    ```
+- 1: Introduction to Git Commits
+
+  ```plaintext
+  git commit
+  git commit
+  ```
+
+- 2: Branching in Git
+
+```plaintext
+git branch bugFix
+git checkout bugFix
+```
+
+- 3: Merging in Git
+
+```plaintext
+git branch bugFix
+git checkout bugFix
+git commit
+git checkout main
+git commit
+git merge bugFix
+```
+
+- 4: Rebase Introduction
+
+```plaintext
+git branch bugFix
+git checkout bugFix
+git commit
+git checkout main
+git commit
+git checkout bugFix
+git rebase main
+```
+
+- 1: Detach yo' HEAD
+
+```plaintext
+git checkout C4
+```
+
+- 2: Relative Refs (^)
+
+```plaintext
+git checkout bugFix^
+```
+
+- 3: Relative Refs #2 (~)
+
+```plaintext
+git checkout C1
+git branch -f main C6
+git branch -f bugFix bugFix~3
+```
+
+- 4: Reversing Changes in Git
+
+```plaintext
+git reset HEAD~1
+git checkout pushed
+git revert HEAD
+```
+
+- 1: Cherry-pick Intro
+
+```plaintext
+git cherry-pick C3 C4 C7
+```
+
+- 2: Interactive Rebase Intro
+
+```plaintext
+git rebase -i HEAD~4
+```
+
+- 1: Grabbing Just 1 Commit
+
+```plaintext
+git checkout main
+git cherry-pick C4
+```
+
+- 2: Juggling Commits
+
+```plaintext
+git rebase -i main
+git commit --amend
+git rebase -i main
+git branch -f main caption
+```
+
+- 3: Juggling Commits #2
+
+```plaintext
+git checkout main
+git cherry-pick C2
+git commit --amend
+git cherry-pick caption
+```
+
+- 4: Git Tags
+
+```plaintext
+git checkout C2
+git tag v1 C2
+git tag v0 C1
+```
+
+- 5: Git Describe
+
+```plaintext
+  git describe main
+  git describe side
+  git describe bugFix
+  git commit
+```
+
+- 1: Rebasing over 9000 times
+
+```plaintext
+git rebase main bugFix
+git rebase bugFix side
+git rebase side another
+git rebase another main
+```
+
+- 2: Multiple parents
+
+```plaintext
+git branch bugWork HEAD~^2~
+```
+
+- 3: Branch Spaghetti
+
+```plaintext
+git checkout one
+git cherry-pick C4 C3 C2
+git checkout two
+git cherry-pick C5 C4 C3 C2
+git branch -f three C2
+```
+
+- 1: Clone Intro
+
+```plaintext
+git clone
+```
+
+- 2: Remote Branches
+
+```plaintext
+git commit
+git checkout o/main
+git commit
+```
+
+- 3: Git Fetchin'
+
+```plaintext
+git fetch
+```
+
+- 4: Git Pullin'
+
+```plaintext
+git pull
+```
+
+- 5: Faking Teamwork
+
+```plaintext
+git clone
+git fakeTeamwork main 2
+git commit
+git pull
+```
+
+- 6: Git Pushin'
+
+```plaintext
+git commit
+git commit
+git push
+```
+
+- 7: Diverged History
+
+```plaintext
+git clone
+git fakeTeamwork
+git commit
+git pull --rebase
+git push
+```
+
+- 8: Locked Main
+
+```plaintext
+git reset --hard o/main
+git checkout -b feature C2
+git push origin feature
+```
+
+- 1: Push Main!
+
+```plaintext
+git rebase side1 side2
+git rebase side2 side3
+git rebase side3 main
+git pull --rebase
+git push
+```
+
+- 2: Merging with remotes
+
+```plaintext
+git checkout main
+git pull
+git merge side1
+git merge side2
+git merge side3
+git push
+```
+
+- 3: Remote Tracking
+
+```plaintext
+git checkout -b side o/main
+git commit -m "My commit"
+git pull --rebase
+git push
+```
+
+- 4: Git push arguments
+
+```plaintext
+git push origin main
+git push origin foo
+```
+
+- 5: Git push arguments -- Expanded!
+
+```plaintext
+git push origin main~1:foo
+git push origin foo:main
+```
+
+- 6: Fetch arguments
+
+```plaintext
+git fetch origin c6:main
+git fetch origin c3:foo
+git checkout foo
+git merge main
+```
+
+- 7: Source of nothing
+
+```plaintext
+git push origin :foo
+git fetch origin :bar
+```
+
+- 8: Pull arguments
+
+```plaintext
+git pull origin c3:foo
+git pull origin c2:side
+```
