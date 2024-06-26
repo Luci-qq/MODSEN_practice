@@ -266,11 +266,13 @@
                     MDTextFieldHintText:
                         text: 'Y Position'
 
-    MDGridLayout:
-        cols: 3
-        size_hint: 1.0, None
-        pos_hint: {'x': 0.15}
+    MDBoxLayout:
+        adaptive_size: True
         spacing: 10
+        padding: [10, 20, 10, 20]  # Добавим немного отступа сверху и снизу
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+        orientation: 'horizontal'
+        
         MDButton:
             id: clear_button
             style: 'elevated'
@@ -279,6 +281,7 @@
                 icon: 'minus'
             MDButtonText:
                 text: 'Clear'
+        
         MDButton:
             id: apply_button
             style: 'elevated'
@@ -287,6 +290,7 @@
                 icon: 'check'
             MDButtonText:
                 text: 'Apply'
+        
         MDButton:
             id: save_button
             style: 'elevated'
@@ -296,6 +300,6 @@
             MDButtonText:
                 text: 'Save'
 
-<ImageLayout>:
+<ImageLayout@MDFloatLayout>:
     md_bg_color: 0.329, 0.305, 0.38
     radius: [25,]

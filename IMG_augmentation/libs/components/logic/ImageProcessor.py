@@ -84,3 +84,6 @@ class ImageProcessor:
         font = ImageFont.truetype("arial.ttf", font_size)
         draw.text(position, text, font=font, fill=color)
         return np.array(img_pil)
+
+    def save_image(self, file_path):
+        cv2.imwrite(file_path, self.image)

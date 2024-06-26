@@ -1,21 +1,9 @@
 from kivymd.uix.floatlayout import MDFloatLayout
 from kivymd.uix.boxlayout import MDBoxLayout
-from kivymd.uix.anchorlayout import MDAnchorLayout
 from kivy.properties import ObjectProperty
-from kivy.uix.tabbedpanel import TabbedPanel
 
-class ResizeToolbar(MDBoxLayout):
+class ImageLayout(MDFloatLayout):
     pass
-
-class RotateToolbar(MDBoxLayout):
-    pass
-
-class ContrastToolbar(MDBoxLayout):
-    pass
-
-class ImageToolbar(TabbedPanel):
-    pass
-
 
 class FunctionalLayout(MDBoxLayout):
     def __init__(self, **kwargs):
@@ -45,5 +33,3 @@ class ImageTools(MDBoxLayout):
     contrast_button = ObjectProperty(None)
     save_button = ObjectProperty(None)
 
-class ImageLayout(MDFloatLayout):
-    pass

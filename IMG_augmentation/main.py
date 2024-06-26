@@ -12,13 +12,13 @@ class ImageAugmentationApp(MDApp):
         return MainScreen()
     
     def load_kv_files(self):
-        Builder.load_file('libs/components/Buttons.kv')
+        Builder.load_file('libs/components/ui/Buttons.kv')
 
         #TreeViewLayout
-        Builder.load_file('libs/components/TreeViewLayout.kv')
+        Builder.load_file('libs/components/ui/TreeViewLayout.kv')
 
         #ImageLayout
-        Builder.load_file('libs/components/ImageLayout.kv')
+        Builder.load_file('libs/components/ui/ImageLayout.kv')
     
         #MainScreen
         Builder.load_file('libs/screens/MainScreen.kv')

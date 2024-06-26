@@ -13,15 +13,3 @@ class AddFolderTreeview(BaseHandleButton):
 class DeleteEntryTreeview(BaseHandleButton):
     pass
 
-class CropButton(BaseHandleButton):
-    pass
-
-class RotateButton(BaseHandleButton):
-    pass
-
-class ContrastButton(BaseHandleButton):
-    pass
-
-class SaveButton(BaseHandleButton):
-    pass
-
