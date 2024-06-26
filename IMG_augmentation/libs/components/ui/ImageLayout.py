@@ -1,7 +1,9 @@
 from kivymd.uix.floatlayout import MDFloatLayout
+from kivy.properties import ObjectProperty
+
 
 class ImageLayout(MDFloatLayout):
-    pass
-
+    height_label = ObjectProperty(None)
+    width_label = ObjectProperty(None)
 
 

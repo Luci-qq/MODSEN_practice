@@ -41,11 +41,13 @@ class MainScreenController:
             if self.view.current_image and self.view.current_image.source == selected_node.file_path:
                 self.clear_displayed_image()
 
+
     def clear_displayed_image(self):
         self.view.clear_displayed_image()
         self.image_processor = None
         if os.path.exists(TEMP_IMAGE_PATH):
             os.remove(TEMP_IMAGE_PATH)
+        self.update_image_size_labels()
         logger.info("Displayed image cleared")
 
     def select_path(self, path: str):
@@ -82,7 +84,17 @@ class MainScreenController:
         self.original_image_path = file_path
         self.view.display_image(file_path)
         self.image_processor = ImageProcessor(file_path)
+        self.update_image_size_labels()
         logger.info(f"Displayed image: {file_path}")
+
+    def update_image_size_labels(self):
+        if self.image_processor:
+            dimensions = self.image_processor.get_dimensions()
+            self.view.ids.image_layout.height_label.text = f"IMG_Height: {dimensions['height']}"
+            self.view.ids.image_layout.width_label.text = f"IMG_Width: {dimensions['width']}"
+        else:
+            self.view.ids.image_layout.height_label.text = 'IMG_Height: N/A'
+            self.view.ids.image_layout.width_label.text = 'IMG_Width: N/A'
 
     def save_image(self):
         if not self.image_processor or not self.original_image_path:
@@ -135,6 +147,7 @@ class MainScreenController:
     def _update_displayed_image(self, image):
         self.image_processor.save_image(TEMP_IMAGE_PATH)
         self.view.update_image_source(TEMP_IMAGE_PATH)
+        self.update_image_size_labels()
         logger.debug("Displayed image updated")
 
     def apply_changes(self, functional_layout):
@@ -154,6 +167,7 @@ class MainScreenController:
         self._apply_text_overlay(functional_layout)
 
         self._update_displayed_image(self.image_processor.image)
+        self.update_image_size_labels()
         logger.info("All changes applied to the image")
 
     def _apply_crop(self, layout):
@@ -234,3 +248,5 @@ class MainScreenController:
             self.display_image(selected_node.file_path)
             return True
         return False
+    
+    

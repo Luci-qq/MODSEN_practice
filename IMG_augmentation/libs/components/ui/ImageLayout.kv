@@ -1,3 +1,17 @@
 <ImageLayout@MDFloatLayout>:
     md_bg_color: 0.329, 0.305, 0.38
     radius: [25,]
+    height_label: _height_label
+    width_label: _width_label
+    MDBoxLayout:
+        size_hint: 0.3, 0.05
+        pos_hint: {'x': 0.03,'y': 0.03}
+        orientation: 'vertical'
+        MDLabel:
+            id: _width_label
+            text: ''
+            color: 1,1,1,1
+        MDLabel:
+            id: _height_label
+            text: ''
+            color: 1,1,1,1

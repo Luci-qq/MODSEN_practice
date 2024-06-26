@@ -85,5 +85,18 @@ class ImageProcessor:
         draw.text(position, text, font=font, fill=color)
         return np.array(img_pil)
 
+    def get_size(self):
+        # Возвращает кортеж (ширина, высота) изображения
+        return self.image.shape[1], self.image.shape[0]
+
+    def get_dimensions(self):
+        # Возвращает словарь с размерами изображения
+        height, width = self.image.shape[:2]
+        return {
+            'width': width,
+            'height': height,
+            'channels': self.image.shape[2] if len(self.image.shape) > 2 else 1
+        }
+
     def save_image(self, file_path):
         cv2.imwrite(file_path, self.image)

@@ -40,6 +40,10 @@ class MainScreen(MDScreen):
             functional_layout.apply_changes = self.apply_changes
             functional_layout.clear_changes = self.clear_changes
 
+        if self.ids.get('image_layout'): 
+            self.ids.get('image_layout').height_label.text = 'IMG_Height: N/A'
+            self.ids.get('image_layout').width_label.text = 'IMG_Width: N/A'
+
     def add_file(self):
         self.controller.add_file()
 
@@ -69,9 +73,11 @@ class MainScreen(MDScreen):
         
         self.current_image = Image(
             source=file_path,
+            size_hint = (0.8,0.8), 
             pos_hint={"center_x": 0.5, "center_y": 0.5}
         )
         self.ids.image_layout.add_widget(self.current_image)
+
 
     def update_image_source(self, source):
         if self.current_image:
