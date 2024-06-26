@@ -12,9 +12,9 @@
 
 Repo:
 
-- [Курсы](Courses/README.MD)
+- [Курсы](Courses/README.md)
 
   - Http
   - Git
 
-- [TestTask(ImageAugmentation)](IMG_augmentation/README.MD)
+- [TestTask(ImageAugmentation)](IMG_augmentation/README.md)
