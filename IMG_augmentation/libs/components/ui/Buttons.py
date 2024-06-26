@@ -1,6 +1,5 @@
 from kivymd.uix.button import MDIconButton
 
-
 class BaseHandleButton(MDIconButton):
     pass
 
