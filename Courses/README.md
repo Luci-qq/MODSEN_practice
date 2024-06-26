@@ -57,7 +57,7 @@ ErrorClient Response - 404
 
 ## Решение:
 
-Main:
+### Main:
 
 - 1: Introduction to Git Commits
 
@@ -203,7 +203,7 @@ git cherry-pick C5 C4 C3 C2
 git branch -f three C2
 ```
 
-Remote:
+### Remote:
 
 - 1: Clone Intro
 
