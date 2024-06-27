@@ -474,7 +474,7 @@ class MainScreenController:
                 self.image_processor.image = self.image_processor.add_noise(float(noise_mean))
                 logger.info(f"Noise added with mean {noise_mean} and std 25")
             else:
-                logger.warning("Noise parameters not fully provided")
+                logger.warning("Noise parameters not provided")
         except ValueError as e:
             logger.error(f"Invalid noise parameters: {str(e)}")
         except Exception as e:

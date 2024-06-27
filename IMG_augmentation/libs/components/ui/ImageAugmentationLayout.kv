@@ -40,7 +40,6 @@
         size_hint: 0.85, 0.85
         pos_hint: {'center_x': 0.5,'center_y': 0.5}
 
-
         MDBoxLayout:
             orientation: 'vertical'
             size_hint_y: None
@@ -63,11 +62,13 @@
                 MDTextField:
                     id: crop_width
                     mode: 'filled'
+                    input_filter: "float"
                     MDTextFieldHintText:
                         text: 'Width'
                 MDTextField:
                     id: crop_height
                     mode: 'filled'
+                    input_filter: "float"
                     MDTextFieldHintText:
                         text: 'Height'
 
@@ -82,6 +83,7 @@
             MDTextField:
                 id: rotate_angle
                 mode: 'filled'
+                input_filter: "float"
                 MDTextFieldHintText:
                     text: 'Angle'
 
@@ -96,6 +98,7 @@
             MDTextField:
                 id: flip_direction
                 mode: 'filled'
+                input_filter: "int"
                 MDTextFieldHintText:
                     text: 'Direction (0, 1, or -1)'
 
@@ -115,16 +118,19 @@
                 MDTextField:
                     id: contrast_factor
                     mode: 'filled'
+                    input_filter: "float"
                     MDTextFieldHintText:
                         text: 'Contrast'
                 MDTextField:
                     id: brightness_factor
                     mode: 'filled'
+                    input_filter: "float"
                     MDTextFieldHintText:
                         text: 'Brightness'
                 MDTextField:
                     id: saturation_factor
                     mode: 'filled'
+                    input_filter: "float"
                     MDTextFieldHintText:
                         text: 'Saturation'
 
@@ -144,11 +150,13 @@
                 MDTextField:
                     id: noise_mean
                     mode: 'filled'
+                    input_filter: "float"
                     MDTextFieldHintText:
                         text: 'Mean'
                 MDTextField:
                     id: noise_std
                     mode: 'filled'
+                    input_filter: "float"
                     MDTextFieldHintText:
                         text: 'Std Dev'
 
@@ -168,11 +176,13 @@
                 MDTextField:
                     id: translate_x
                     mode: 'filled'
+                    input_filter: "float"
                     MDTextFieldHintText:
                         text: 'X'
                 MDTextField:
                     id: translate_y
                     mode: 'filled'
+                    input_filter: "float"
                     MDTextFieldHintText:
                         text: 'Y'
 
@@ -187,6 +197,7 @@
             MDTextField:
                 id: shear_factor
                 mode: 'filled'
+                input_filter: "float"
                 MDTextFieldHintText:
                     text: 'Shear Factor'
 
@@ -206,11 +217,13 @@
                 MDTextField:
                     id: stretch_x
                     mode: 'filled'
+                    input_filter: "float"
                     MDTextFieldHintText:
                         text: 'X Factor'
                 MDTextField:
                     id: stretch_y
                     mode: 'filled'
+                    input_filter: "float"
                     MDTextFieldHintText:
                         text: 'Y Factor'
 
@@ -230,11 +243,13 @@
                 MDTextField:
                     id: random_crop_width
                     mode: 'filled'
+                    input_filter: "int"
                     MDTextFieldHintText:
                         text: 'Width'
                 MDTextField:
                     id: random_crop_height
                     mode: 'filled'
+                    input_filter: "int"
                     MDTextFieldHintText:
                         text: 'Height'
 
@@ -260,11 +275,13 @@
                 MDTextField:
                     id: text_position_x
                     mode: 'filled'
+                    input_filter: "int"
                     MDTextFieldHintText:
                         text: 'X Position'
                 MDTextField:
                     id: text_position_y
                     mode: 'filled'
+                    input_filter: "int"
                     MDTextFieldHintText:
                         text: 'Y Position'
 
