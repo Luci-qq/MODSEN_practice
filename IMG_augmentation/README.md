@@ -26,3 +26,5 @@
 - [Kivymd](https://kivymd.readthedocs.io/en/latest/index.html)
 - [OpenCV](https://opencv.org/)
 - [Pillow](https://python-pillow.org/)
+
+## Использование
