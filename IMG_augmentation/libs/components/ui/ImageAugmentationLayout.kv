@@ -44,12 +44,13 @@
             orientation: 'vertical'
             size_hint_y: None
             height: self.minimum_height
-            spacing: 10
-
+            spacing: "20dp"  
+            padding: "10dp"
+              
             MDLabel:
                 size_hint: 1.0, None
                 height: self.texture_size[1]
-                text: "Crop"
+                text: "Crop:"
                 color: 1,1,1,1
                 font_style: 'Title'
                 role: 'large'
@@ -58,7 +59,7 @@
                 cols: 2
                 size_hint: 1.0, None
                 height: "48dp"
-                spacing: 10
+                spacing: "20dp" 
                 MDTextField:
                     id: crop_width
                     mode: 'filled'
@@ -75,7 +76,7 @@
             MDLabel:
                 size_hint: 1.0, None
                 height: self.texture_size[1]
-                text: "Rotate"
+                text: "Rotate:"
                 color: 1,1,1,1
                 font_style: 'Title'
                 role: 'large'
@@ -90,7 +91,7 @@
             MDLabel:
                 size_hint: 1.0, None
                 height: self.texture_size[1]
-                text: "Flip"
+                text: "Flip:"
                 color: 1,1,1,1
                 font_style: 'Title'
                 role: 'large'
@@ -105,7 +106,7 @@
             MDLabel:
                 size_hint: 1.0, None
                 height: self.texture_size[1]
-                text: "Contrast/Brightness/Saturation"
+                text: "Tonality:"
                 color: 1,1,1,1
                 font_style: 'Title'
                 role: 'large'
@@ -114,7 +115,7 @@
                 cols: 3
                 size_hint: 1.0, None
                 height: "48dp"
-                spacing: 10
+                spacing: "20dp"  
                 MDTextField:
                     id: contrast_factor
                     mode: 'filled'
@@ -137,7 +138,7 @@
             MDLabel:
                 size_hint: 1.0, None
                 height: self.texture_size[1]
-                text: "Add Noise"
+                text: "Add Noise:"
                 color: 1,1,1,1
                 font_style: 'Title'
                 role: 'large'
@@ -146,7 +147,7 @@
                 cols: 2
                 size_hint: 1.0, None
                 height: "48dp"
-                spacing: 10
+                spacing: "20dp" 
                 MDTextField:
                     id: noise_mean
                     mode: 'filled'
@@ -163,7 +164,7 @@
             MDLabel:
                 size_hint: 1.0, None
                 height: self.texture_size[1]
-                text: "Translate"
+                text: "Translate:"
                 color: 1,1,1,1
                 font_style: 'Title'
                 role: 'large'
@@ -172,7 +173,7 @@
                 cols: 2
                 size_hint: 1.0, None
                 height: "48dp"
-                spacing: 10
+                spacing: "20dp"  
                 MDTextField:
                     id: translate_x
                     mode: 'filled'
@@ -189,7 +190,7 @@
             MDLabel:
                 size_hint: 1.0, None
                 height: self.texture_size[1]
-                text: "Shear"
+                text: "Shear:"
                 color: 1,1,1,1
                 font_style: 'Title'
                 role: 'large'
@@ -204,7 +205,7 @@
             MDLabel:
                 size_hint: 1.0, None
                 height: self.texture_size[1]
-                text: "Stretch"
+                text: "Stretch:"
                 color: 1,1,1,1
                 font_style: 'Title'
                 role: 'large'
@@ -213,7 +214,7 @@
                 cols: 2
                 size_hint: 1.0, None
                 height: "48dp"
-                spacing: 10
+                spacing: "20dp"  
                 MDTextField:
                     id: stretch_x
                     mode: 'filled'
@@ -230,7 +231,7 @@
             MDLabel:
                 size_hint: 1.0, None
                 height: self.texture_size[1]
-                text: "Random Crop"
+                text: "Random Crop:"
                 color: 1,1,1,1
                 font_style: 'Title'
                 role: 'large'
@@ -239,7 +240,7 @@
                 cols: 2
                 size_hint: 1.0, None
                 height: "48dp"
-                spacing: 10
+                spacing: "20dp"  
                 MDTextField:
                     id: random_crop_width
                     mode: 'filled'
@@ -256,7 +257,7 @@
             MDLabel:
                 size_hint: 1.0, None
                 height: self.texture_size[1]
-                text: "Add Text"
+                text: "Add Text:"
                 color: 1,1,1,1
                 font_style: 'Title'
                 role: 'large'
@@ -271,7 +272,7 @@
                 cols: 2
                 size_hint: 1.0, None
                 height: "48dp"
-                spacing: 10
+                spacing: "20dp"  
                 MDTextField:
                     id: text_position_x
                     mode: 'filled'
@@ -288,7 +289,7 @@
     MDBoxLayout:
         adaptive_size: True
         spacing: 10
-        padding: [10, 20, 10, 20]  # Добавим немного отступа сверху и снизу
+        padding: [10, 20, 10, 20]  
         pos_hint: {'center_x': 0.5, 'center_y': 0.5}
         orientation: 'horizontal'
         
