@@ -3,10 +3,14 @@ import numpy as np
 from PIL import Image, ImageEnhance, ImageDraw, ImageFont
 
 class ImageProcessor:
-    def __init__(self, image_path):
-        # Инициализация класса с загрузкой изображения
-        self.image = cv2.imread(image_path)
-        self.pil_image = Image.open(image_path)
+    # Инициализация класса с загрузкой изображения
+    def __init__(self, image):
+        if isinstance(image, str):
+            self.image = cv2.imread(image)
+            self.pil_image = Image.open(image)
+        else:
+            self.image = image
+            self.pil_image = Image.fromarray(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
 
     def _update_pil_image(self):
         self.pil_image = Image.fromarray(cv2.cvtColor(self.image, cv2.COLOR_BGR2RGB))
@@ -98,5 +102,9 @@ class ImageProcessor:
             'channels': self.image.shape[2] if len(self.image.shape) > 2 else 1
         }
 
-    def save_image(self, file_path):
-        cv2.imwrite(file_path, self.image)
+    def save_image(self, file_or_buffer):
+        if isinstance(file_or_buffer, str):
+            cv2.imwrite(file_or_buffer, self.image)
+        else:
+            _, buffer = cv2.imencode('.jpg', self.image)
+            file_or_buffer.write(buffer)
