@@ -18,7 +18,7 @@
 ## Содержание
 
 - [Технологии](#id_technologies)
-- [Начало работы](#id_started_working)
+- [Начало работы](#id_installation)
 
 <a id='id_technologies'></a>
 
@@ -29,7 +29,7 @@
 - [OpenCV](https://opencv.org/)
 - [Pillow](https://python-pillow.org/)
 
-<a id='id_start_working'></a>
+<a id='id_installation'></a>
 
 ## Установка и запуск
 
@@ -43,8 +43,8 @@ python -m venv venv
 
 - Windows:
 
-```bash
-venv\Scripts\activate
+```sh
+.\venv\Scripts\activate
 ```
 
 - macOS и Linux:
