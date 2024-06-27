@@ -111,29 +111,25 @@
                 font_style: 'Title'
                 role: 'large'
 
-            MDGridLayout:
-                cols: 3
-                size_hint: 1.0, None
-                height: "48dp"
-                spacing: "20dp"  
-                MDTextField:
-                    id: contrast_factor
-                    mode: 'filled'
-                    input_filter: "float"
-                    MDTextFieldHintText:
-                        text: 'Contrast'
-                MDTextField:
-                    id: brightness_factor
-                    mode: 'filled'
-                    input_filter: "float"
-                    MDTextFieldHintText:
-                        text: 'Brightness'
-                MDTextField:
-                    id: saturation_factor
-                    mode: 'filled'
-                    input_filter: "float"
-                    MDTextFieldHintText:
-                        text: 'Saturation'
+            MDTextField:
+                id: contrast_factor
+                mode: 'filled'
+                input_filter: "float"
+                MDTextFieldHintText:
+                    text: 'Contrast'
+            MDTextField:
+                id: brightness_factor
+                mode: 'filled'
+                input_filter: "float"
+                MDTextFieldHintText:
+                    text: 'Brightness'
+                    
+            MDTextField:
+                id: saturation_factor
+                mode: 'filled'
+                input_filter: "float"
+                MDTextFieldHintText:
+                    text: 'Saturation'
 
             MDLabel:
                 size_hint: 1.0, None
@@ -164,7 +160,7 @@
             MDLabel:
                 size_hint: 1.0, None
                 height: self.texture_size[1]
-                text: "Translate:"
+                text: "Shift:"
                 color: 1,1,1,1
                 font_style: 'Title'
                 role: 'large'
