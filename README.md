@@ -17,4 +17,4 @@ Repo:
   - Http
   - Git
 
-- [TestTask(ImageAugmentation)](IMG_augmentation/README.md)
+- [Тестовое задание(IMG_augmentation)](IMG_augmentation/README.md)
