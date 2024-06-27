@@ -14,3 +14,15 @@
 - Stretch (растяжение)
 - Random Crop (случайная вырезка)
 - Add text (добавление текста на изображение)
+
+## Содержание
+
+- [Технологии](#технологии)
+- [Начало работы](#)
+
+## Технологии
+
+- [Kivy](https://kivy.org/)
+- [Kivymd](https://kivymd.readthedocs.io/en/latest/index.html)
+- [OpenCV](https://opencv.org/)
+- [Pillow](https://python-pillow.org/)

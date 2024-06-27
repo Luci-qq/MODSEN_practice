@@ -18,4 +18,3 @@ Repo:
   - Git
 
 - [Тестовое задание(IMG_augmentation)](IMG_augmentation/README.md)
-  sdf
