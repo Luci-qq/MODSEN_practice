@@ -17,8 +17,10 @@
 
 ## Содержание
 
-- [Технологии](#технологии)
-- [Начало работы](#)
+- [Технологии](#id_technologies)
+- [Начало работы](#id_started_working)
+
+<a id='id_technologies'></a>
 
 ## Технологии
 
@@ -27,4 +29,38 @@
 - [OpenCV](https://opencv.org/)
 - [Pillow](https://python-pillow.org/)
 
-## Использование
+<a id='id_start_working'></a>
+
+## Установка и запуск
+
+1. Создание виртуального окружения:
+
+```bash
+python -m venv venv
+```
+
+2.  Активация виртуального окружения:
+
+- Windows:
+
+```bash
+venv\Scripts\activate
+```
+
+- macOS и Linux:
+
+```sh
+source venv/bin/activate
+```
+
+3. Установка зависимостей:
+
+```sh
+pip install -r requirements.txt
+```
+
+4. Запуск приложения:
+
+```sh
+python main.py
+```
