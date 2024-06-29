@@ -47,12 +47,15 @@
             spacing: "30dp"  
             padding: "20dp"
               
-            MDCard:
+            MDBoxLayout:
                 orientation: 'vertical'
                 size_hint: 1, None
                 height: self.minimum_height
                 padding: "15dp"
-                
+                spacing: 15
+                md_bg_color: 1, 1, 1, 1
+                radius: [25,]
+           
                 MDLabel:
                     text: "Crop"
                     bold: True
@@ -60,33 +63,32 @@
                     size_hint_y: None
                     height: self.texture_size[1]
 
-                MDDivider:
-                    height: "1dp"
-                    md_bg_color: 1,1,1,0.2
-
-                MDGridLayout:
-                    cols: 2
+                MDBoxLayout:
+                    orientation: 'horizontal'
                     size_hint: 1.0, None
                     height: "48dp"
                     spacing: "20dp" 
                     MDTextField:
                         id: crop_width
-                        mode: 'filled'
+                        mode: 'outlined'
                         input_filter: "float"
                         MDTextFieldHintText:
                             text: 'Width'
                     MDTextField:
                         id: crop_height
-                        mode: 'filled'
+                        mode: 'outlined'
                         input_filter: "float"
                         MDTextFieldHintText:
                             text: 'Height'
 
-            MDCard:
+            MDBoxLayout:
                 orientation: 'vertical'
                 size_hint: 1, None
                 height: self.minimum_height
                 padding: "15dp"
+                spacing: 10
+                md_bg_color: 1, 1, 1, 1
+                radius: [25,]
 
                 MDLabel:
                     text: "Rotate"
@@ -95,22 +97,21 @@
                     size_hint_y: None
                     height: self.texture_size[1]
 
-                MDDivider:
-                    height: "1dp"
-                    md_bg_color: 1,1,1,0.2
-
                 MDTextField:
                     id: rotate_angle
-                    mode: 'filled'
+                    mode: 'outlined'
                     input_filter: "float"
                     MDTextFieldHintText:
                         text: 'Angle'
 
-            MDCard:
+            MDBoxLayout:
                 orientation: 'vertical'
                 size_hint: 1, None
                 height: self.minimum_height
                 padding: "15dp"
+                spacing: 10
+                md_bg_color: 1, 1, 1, 1
+                radius: [25,]
 
                 MDLabel:
                     text: "Flip"
@@ -119,22 +120,21 @@
                     size_hint_y: None
                     height: self.texture_size[1]
 
-                MDDivider:
-                    height: "1dp"
-                    md_bg_color: 1,1,1,0.2
-
                 MDTextField:
                     id: flip_direction
-                    mode: 'filled'
+                    mode: 'outlined'
                     input_filter: "int"
                     MDTextFieldHintText:
                         text: 'Direction (0, 1, or -1)'
 
-            MDCard:
+            MDBoxLayout:
                 orientation: 'vertical'
                 size_hint: 1, None
                 height: self.minimum_height
                 padding: "15dp"
+                spacing: 10
+                md_bg_color: 1, 1, 1, 1
+                radius: [25,]
 
                 MDLabel:
                     text: "Tonality"
@@ -143,34 +143,33 @@
                     size_hint_y: None
                     height: self.texture_size[1]
 
-                MDDivider:
-                    height: "1dp"
-                    md_bg_color: 1,1,1,0.2
-
                 MDTextField:
                     id: contrast_factor
-                    mode: 'filled'
+                    mode: 'outlined'
                     input_filter: "float"
                     MDTextFieldHintText:
                         text: 'Contrast'
                 MDTextField:
                     id: brightness_factor
-                    mode: 'filled'
+                    mode: 'outlined'
                     input_filter: "float"
                     MDTextFieldHintText:
                         text: 'Brightness'
                 MDTextField:
                     id: saturation_factor
-                    mode: 'filled'
+                    mode: 'outlined'
                     input_filter: "float"
                     MDTextFieldHintText:
                         text: 'Saturation'
 
-            MDCard:
+            MDBoxLayout:
                 orientation: 'vertical'
                 size_hint: 1, None
                 height: self.minimum_height
                 padding: "15dp"
+                spacing: 15
+                md_bg_color: 1, 1, 1, 1
+                radius: [25,]
 
                 MDLabel:
                     text: "Add Noise"
@@ -179,33 +178,32 @@
                     size_hint_y: None
                     height: self.texture_size[1]
 
-                MDDivider:
-                    height: "1dp"
-                    md_bg_color: 1,1,1,0.2
-
-                MDGridLayout:
-                    cols: 2
+                MDBoxLayout:
+                    orientation: 'horizontal'
                     size_hint: 1.0, None
                     height: "48dp"
                     spacing: "20dp" 
                     MDTextField:
                         id: noise_mean
-                        mode: 'filled'
+                        mode: 'outlined'
                         input_filter: "float"
                         MDTextFieldHintText:
                             text: 'Mean'
                     MDTextField:
                         id: noise_std
-                        mode: 'filled'
+                        mode: 'outlined'
                         input_filter: "float"
                         MDTextFieldHintText:
                             text: 'Std Dev'
 
-            MDCard:
+            MDBoxLayout:
                 orientation: 'vertical'
                 size_hint: 1, None
                 height: self.minimum_height
                 padding: "15dp"
+                spacing: 15               
+                md_bg_color: 1, 1, 1, 1
+                radius: [25,]
 
                 MDLabel:
                     text: "Shift"
@@ -214,33 +212,32 @@
                     size_hint_y: None
                     height: self.texture_size[1]
 
-                MDDivider:
-                    height: "1dp"
-                    md_bg_color: 1,1,1,0.2
-
-                MDGridLayout:
-                    cols: 2
+                MDBoxLayout:
+                    orientation: 'horizontal'
                     size_hint: 1.0, None
                     height: "48dp"
                     spacing: "20dp"  
                     MDTextField:
                         id: translate_x
-                        mode: 'filled'
+                        mode: 'outlined'
                         input_filter: "float"
                         MDTextFieldHintText:
                             text: 'X'
                     MDTextField:
                         id: translate_y
-                        mode: 'filled'
+                        mode: 'outlined'
                         input_filter: "float"
                         MDTextFieldHintText:
                             text: 'Y'
 
-            MDCard:
+            MDBoxLayout:
                 orientation: 'vertical'
                 size_hint: 1, None
                 height: self.minimum_height
                 padding: "15dp"
+                spacing: 10
+                md_bg_color: 1, 1, 1, 1
+                radius: [25,]
 
                 MDLabel:
                     text: "Shear"
@@ -249,22 +246,21 @@
                     size_hint_y: None
                     height: self.texture_size[1]
 
-                MDDivider:
-                    height: "1dp"
-                    md_bg_color: 1,1,1,0.2
-
                 MDTextField:
                     id: shear_factor
-                    mode: 'filled'
+                    mode: 'outlined'
                     input_filter: "float"
                     MDTextFieldHintText:
                         text: 'Shear Factor'
 
-            MDCard:
+            MDBoxLayout:
                 orientation: 'vertical'
                 size_hint: 1, None
                 height: self.minimum_height
                 padding: "15dp"
+                spacing: 15             
+                md_bg_color: 1, 1, 1, 1
+                radius: [25,]
 
                 MDLabel:
                     text: "Stretch"
@@ -273,33 +269,32 @@
                     size_hint_y: None
                     height: self.texture_size[1]
 
-                MDDivider:
-                    height: "1dp"
-                    md_bg_color: 1,1,1,0.2
-
-                MDGridLayout:
-                    cols: 2
+                MDBoxLayout:
+                    orientation: 'horizontal'
                     size_hint: 1.0, None
                     height: "48dp"
                     spacing: "20dp"  
                     MDTextField:
                         id: stretch_x
-                        mode: 'filled'
+                        mode: 'outlined'
                         input_filter: "float"
                         MDTextFieldHintText:
                             text: 'X Factor'
                     MDTextField:
                         id: stretch_y
-                        mode: 'filled'
+                        mode: 'outlined'
                         input_filter: "float"
                         MDTextFieldHintText:
                             text: 'Y Factor'
 
-            MDCard:
+            MDBoxLayout:
                 orientation: 'vertical'
                 size_hint: 1, None
                 height: self.minimum_height
                 padding: "15dp"
+                spacing: 15              
+                md_bg_color: 1, 1, 1, 1
+                radius: [25,]
 
                 MDLabel:
                     text: "Random Crop"
@@ -308,33 +303,32 @@
                     size_hint_y: None
                     height: self.texture_size[1]
 
-                MDDivider:
-                    height: "1dp"
-                    md_bg_color: 1,1,1,0.2
-
-                MDGridLayout:
-                    cols: 2
+                MDBoxLayout:
+                    orientation: 'horizontal'
                     size_hint: 1.0, None
                     height: "48dp"
                     spacing: "20dp"  
                     MDTextField:
                         id: random_crop_width
-                        mode: 'filled'
+                        mode: 'outlined'
                         input_filter: "int"
                         MDTextFieldHintText:
                             text: 'Width'
                     MDTextField:
                         id: random_crop_height
-                        mode: 'filled'
+                        mode: 'outlined'
                         input_filter: "int"
                         MDTextFieldHintText:
                             text: 'Height'
 
-            MDCard:
+            MDBoxLayout:
                 orientation: 'vertical'
                 size_hint: 1, None
                 height: self.minimum_height
                 padding: "15dp"
+                spacing: "10dp"
+                md_bg_color: 1, 1, 1, 1
+                radius: [25,]
 
                 MDLabel:
                     text: "Add Text"
@@ -343,30 +337,32 @@
                     size_hint_y: None
                     height: self.texture_size[1]
 
-                MDDivider:
-                    height: "1dp"
-                    md_bg_color: 1,1,1,0.2
-
                 MDTextField:
                     id: text_overlay
-                    mode: 'filled'
+                    mode: 'outlined'
                     MDTextFieldHintText:
                         text: 'Text'
 
-                MDGridLayout:
-                    cols: 2
+                Widget:
+                    size_hint_y: None
+                    height: "5dp" 
+
+                MDBoxLayout:
+                    orientation: 'horizontal'
                     size_hint: 1.0, None
                     height: "48dp"
-                    spacing: "20dp"  
+                    spacing: "20dp"
+
                     MDTextField:
                         id: text_position_x
-                        mode: 'filled'
+                        mode: 'outlined'
                         input_filter: "int"
                         MDTextFieldHintText:
                             text: 'X Position'
+
                     MDTextField:
                         id: text_position_y
-                        mode: 'filled'
+                        mode: 'outlined'
                         input_filter: "int"
                         MDTextFieldHintText:
                             text: 'Y Position'
@@ -374,7 +370,7 @@
     MDBoxLayout:
         adaptive_size: True
         spacing: 20
-        padding: [20, 20, 20, 20]  # Уменьшен верхний отступ
+        padding: [20, 20, 20, 20]
         pos_hint: {'center_x': 0.5, 'center_y': 0.5}
         orientation: 'horizontal'
         
