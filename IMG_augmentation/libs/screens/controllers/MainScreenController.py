@@ -346,11 +346,11 @@ class MainScreenController:
         Clear all applied changes and reset the image to its original state.
         """
         try:
-            if self._select_image_from_treeview():
-                img_augmentation_layout = self.view.ids.get('img_augmentation_layout')
-                if img_augmentation_layout:
+            img_augmentation_layout = self.view.ids.get('img_augmentation_layout')
+            if img_augmentation_layout:
                     img_augmentation_layout.clear_fields()
 
+            if self._select_image_from_treeview():
                 if os.path.exists(TEMP_IMAGE_PATH):
                     os.remove(TEMP_IMAGE_PATH)
                 logger.info("Changes cleared")

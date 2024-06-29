@@ -2,8 +2,8 @@
     md_bg_color: 0.23, 0.2, 0.27
     radius: [25,]
     orientation: 'vertical'
-    spacing: 10
-    padding: [10, 10, 10, 10]
+    spacing: 5 
+    padding: [20, 10, 20, 10]  
 
     crop_width: crop_width
     crop_height: crop_height
@@ -28,264 +28,356 @@
     MDLabel:
         size_hint: 1.0, None
         height: self.texture_size[1]
-        text: "ImageAugmentation"
-        halign: 'center'
+        text: "Augmentations:"
+        halign: 'left'
         color: 1,1,1,1
         font_style: 'Headline'
-        role: 'small'
+        bold: True
+        padding_x: "20dp"
+        padding_y: "5dp"
+
 
     MDScrollView:
         do_scroll_y: True
         bar_width: 0
-        size_hint: 0.85, 0.85
+        size_hint: 0.9, 0.9
         pos_hint: {'center_x': 0.5,'center_y': 0.5}
 
         MDBoxLayout:
             orientation: 'vertical'
             size_hint_y: None
             height: self.minimum_height
-            spacing: "20dp"  
-            padding: "10dp"
+            spacing: "30dp"  
+            padding: "20dp"
               
-            MDLabel:
-                size_hint: 1.0, None
-                height: self.texture_size[1]
-                text: "Crop:"
-                color: 1,1,1,1
-                font_style: 'Title'
-                role: 'large'
+            MDCard:
+                orientation: 'vertical'
+                size_hint: 1, None
+                height: self.minimum_height
+                padding: "15dp"
+                
+                MDLabel:
+                    text: "Crop"
+                    bold: True
+                    color: 0,0,0
+                    size_hint_y: None
+                    height: self.texture_size[1]
 
-            MDGridLayout:
-                cols: 2
-                size_hint: 1.0, None
-                height: "48dp"
-                spacing: "20dp" 
+                MDDivider:
+                    height: "1dp"
+                    md_bg_color: 1,1,1,0.2
+
+                MDGridLayout:
+                    cols: 2
+                    size_hint: 1.0, None
+                    height: "48dp"
+                    spacing: "20dp" 
+                    MDTextField:
+                        id: crop_width
+                        mode: 'filled'
+                        input_filter: "float"
+                        MDTextFieldHintText:
+                            text: 'Width'
+                    MDTextField:
+                        id: crop_height
+                        mode: 'filled'
+                        input_filter: "float"
+                        MDTextFieldHintText:
+                            text: 'Height'
+
+            MDCard:
+                orientation: 'vertical'
+                size_hint: 1, None
+                height: self.minimum_height
+                padding: "15dp"
+
+                MDLabel:
+                    text: "Rotate"
+                    bold: True
+                    color: 0,0,0
+                    size_hint_y: None
+                    height: self.texture_size[1]
+
+                MDDivider:
+                    height: "1dp"
+                    md_bg_color: 1,1,1,0.2
+
                 MDTextField:
-                    id: crop_width
+                    id: rotate_angle
                     mode: 'filled'
                     input_filter: "float"
                     MDTextFieldHintText:
-                        text: 'Width'
+                        text: 'Angle'
+
+            MDCard:
+                orientation: 'vertical'
+                size_hint: 1, None
+                height: self.minimum_height
+                padding: "15dp"
+
+                MDLabel:
+                    text: "Flip"
+                    bold: True
+                    color: 0,0,0
+                    size_hint_y: None
+                    height: self.texture_size[1]
+
+                MDDivider:
+                    height: "1dp"
+                    md_bg_color: 1,1,1,0.2
+
                 MDTextField:
-                    id: crop_height
-                    mode: 'filled'
-                    input_filter: "float"
-                    MDTextFieldHintText:
-                        text: 'Height'
-
-            MDLabel:
-                size_hint: 1.0, None
-                height: self.texture_size[1]
-                text: "Rotate:"
-                color: 1,1,1,1
-                font_style: 'Title'
-                role: 'large'
-
-            MDTextField:
-                id: rotate_angle
-                mode: 'filled'
-                input_filter: "float"
-                MDTextFieldHintText:
-                    text: 'Angle'
-
-            MDLabel:
-                size_hint: 1.0, None
-                height: self.texture_size[1]
-                text: "Flip:"
-                color: 1,1,1,1
-                font_style: 'Title'
-                role: 'large'
-
-            MDTextField:
-                id: flip_direction
-                mode: 'filled'
-                input_filter: "int"
-                MDTextFieldHintText:
-                    text: 'Direction (0, 1, or -1)'
-
-            MDLabel:
-                size_hint: 1.0, None
-                height: self.texture_size[1]
-                text: "Tonality:"
-                color: 1,1,1,1
-                font_style: 'Title'
-                role: 'large'
-
-            MDTextField:
-                id: contrast_factor
-                mode: 'filled'
-                input_filter: "float"
-                MDTextFieldHintText:
-                    text: 'Contrast'
-            MDTextField:
-                id: brightness_factor
-                mode: 'filled'
-                input_filter: "float"
-                MDTextFieldHintText:
-                    text: 'Brightness'
-                    
-            MDTextField:
-                id: saturation_factor
-                mode: 'filled'
-                input_filter: "float"
-                MDTextFieldHintText:
-                    text: 'Saturation'
-
-            MDLabel:
-                size_hint: 1.0, None
-                height: self.texture_size[1]
-                text: "Add Noise:"
-                color: 1,1,1,1
-                font_style: 'Title'
-                role: 'large'
-
-            MDGridLayout:
-                cols: 2
-                size_hint: 1.0, None
-                height: "48dp"
-                spacing: "20dp" 
-                MDTextField:
-                    id: noise_mean
-                    mode: 'filled'
-                    input_filter: "float"
-                    MDTextFieldHintText:
-                        text: 'Mean'
-                MDTextField:
-                    id: noise_std
-                    mode: 'filled'
-                    input_filter: "float"
-                    MDTextFieldHintText:
-                        text: 'Std Dev'
-
-            MDLabel:
-                size_hint: 1.0, None
-                height: self.texture_size[1]
-                text: "Shift:"
-                color: 1,1,1,1
-                font_style: 'Title'
-                role: 'large'
-
-            MDGridLayout:
-                cols: 2
-                size_hint: 1.0, None
-                height: "48dp"
-                spacing: "20dp"  
-                MDTextField:
-                    id: translate_x
-                    mode: 'filled'
-                    input_filter: "float"
-                    MDTextFieldHintText:
-                        text: 'X'
-                MDTextField:
-                    id: translate_y
-                    mode: 'filled'
-                    input_filter: "float"
-                    MDTextFieldHintText:
-                        text: 'Y'
-
-            MDLabel:
-                size_hint: 1.0, None
-                height: self.texture_size[1]
-                text: "Shear:"
-                color: 1,1,1,1
-                font_style: 'Title'
-                role: 'large'
-
-            MDTextField:
-                id: shear_factor
-                mode: 'filled'
-                input_filter: "float"
-                MDTextFieldHintText:
-                    text: 'Shear Factor'
-
-            MDLabel:
-                size_hint: 1.0, None
-                height: self.texture_size[1]
-                text: "Stretch:"
-                color: 1,1,1,1
-                font_style: 'Title'
-                role: 'large'
-
-            MDGridLayout:
-                cols: 2
-                size_hint: 1.0, None
-                height: "48dp"
-                spacing: "20dp"  
-                MDTextField:
-                    id: stretch_x
-                    mode: 'filled'
-                    input_filter: "float"
-                    MDTextFieldHintText:
-                        text: 'X Factor'
-                MDTextField:
-                    id: stretch_y
-                    mode: 'filled'
-                    input_filter: "float"
-                    MDTextFieldHintText:
-                        text: 'Y Factor'
-
-            MDLabel:
-                size_hint: 1.0, None
-                height: self.texture_size[1]
-                text: "Random Crop:"
-                color: 1,1,1,1
-                font_style: 'Title'
-                role: 'large'
-
-            MDGridLayout:
-                cols: 2
-                size_hint: 1.0, None
-                height: "48dp"
-                spacing: "20dp"  
-                MDTextField:
-                    id: random_crop_width
+                    id: flip_direction
                     mode: 'filled'
                     input_filter: "int"
                     MDTextFieldHintText:
-                        text: 'Width'
-                MDTextField:
-                    id: random_crop_height
-                    mode: 'filled'
-                    input_filter: "int"
-                    MDTextFieldHintText:
-                        text: 'Height'
+                        text: 'Direction (0, 1, or -1)'
 
-            MDLabel:
-                size_hint: 1.0, None
-                height: self.texture_size[1]
-                text: "Add Text:"
-                color: 1,1,1,1
-                font_style: 'Title'
-                role: 'large'
+            MDCard:
+                orientation: 'vertical'
+                size_hint: 1, None
+                height: self.minimum_height
+                padding: "15dp"
 
-            MDTextField:
-                id: text_overlay
-                mode: 'filled'
-                MDTextFieldHintText:
-                    text: 'Text'
+                MDLabel:
+                    text: "Tonality"
+                    bold: True
+                    color: 0,0,0
+                    size_hint_y: None
+                    height: self.texture_size[1]
 
-            MDGridLayout:
-                cols: 2
-                size_hint: 1.0, None
-                height: "48dp"
-                spacing: "20dp"  
+                MDDivider:
+                    height: "1dp"
+                    md_bg_color: 1,1,1,0.2
+
                 MDTextField:
-                    id: text_position_x
+                    id: contrast_factor
                     mode: 'filled'
-                    input_filter: "int"
+                    input_filter: "float"
                     MDTextFieldHintText:
-                        text: 'X Position'
+                        text: 'Contrast'
                 MDTextField:
-                    id: text_position_y
+                    id: brightness_factor
                     mode: 'filled'
-                    input_filter: "int"
+                    input_filter: "float"
                     MDTextFieldHintText:
-                        text: 'Y Position'
+                        text: 'Brightness'
+                MDTextField:
+                    id: saturation_factor
+                    mode: 'filled'
+                    input_filter: "float"
+                    MDTextFieldHintText:
+                        text: 'Saturation'
+
+            MDCard:
+                orientation: 'vertical'
+                size_hint: 1, None
+                height: self.minimum_height
+                padding: "15dp"
+
+                MDLabel:
+                    text: "Add Noise"
+                    bold: True
+                    color: 0,0,0
+                    size_hint_y: None
+                    height: self.texture_size[1]
+
+                MDDivider:
+                    height: "1dp"
+                    md_bg_color: 1,1,1,0.2
+
+                MDGridLayout:
+                    cols: 2
+                    size_hint: 1.0, None
+                    height: "48dp"
+                    spacing: "20dp" 
+                    MDTextField:
+                        id: noise_mean
+                        mode: 'filled'
+                        input_filter: "float"
+                        MDTextFieldHintText:
+                            text: 'Mean'
+                    MDTextField:
+                        id: noise_std
+                        mode: 'filled'
+                        input_filter: "float"
+                        MDTextFieldHintText:
+                            text: 'Std Dev'
+
+            MDCard:
+                orientation: 'vertical'
+                size_hint: 1, None
+                height: self.minimum_height
+                padding: "15dp"
+
+                MDLabel:
+                    text: "Shift"
+                    bold: True
+                    color: 0,0,0
+                    size_hint_y: None
+                    height: self.texture_size[1]
+
+                MDDivider:
+                    height: "1dp"
+                    md_bg_color: 1,1,1,0.2
+
+                MDGridLayout:
+                    cols: 2
+                    size_hint: 1.0, None
+                    height: "48dp"
+                    spacing: "20dp"  
+                    MDTextField:
+                        id: translate_x
+                        mode: 'filled'
+                        input_filter: "float"
+                        MDTextFieldHintText:
+                            text: 'X'
+                    MDTextField:
+                        id: translate_y
+                        mode: 'filled'
+                        input_filter: "float"
+                        MDTextFieldHintText:
+                            text: 'Y'
+
+            MDCard:
+                orientation: 'vertical'
+                size_hint: 1, None
+                height: self.minimum_height
+                padding: "15dp"
+
+                MDLabel:
+                    text: "Shear"
+                    bold: True
+                    color: 0,0,0
+                    size_hint_y: None
+                    height: self.texture_size[1]
+
+                MDDivider:
+                    height: "1dp"
+                    md_bg_color: 1,1,1,0.2
+
+                MDTextField:
+                    id: shear_factor
+                    mode: 'filled'
+                    input_filter: "float"
+                    MDTextFieldHintText:
+                        text: 'Shear Factor'
+
+            MDCard:
+                orientation: 'vertical'
+                size_hint: 1, None
+                height: self.minimum_height
+                padding: "15dp"
+
+                MDLabel:
+                    text: "Stretch"
+                    bold: True
+                    color: 0,0,0
+                    size_hint_y: None
+                    height: self.texture_size[1]
+
+                MDDivider:
+                    height: "1dp"
+                    md_bg_color: 1,1,1,0.2
+
+                MDGridLayout:
+                    cols: 2
+                    size_hint: 1.0, None
+                    height: "48dp"
+                    spacing: "20dp"  
+                    MDTextField:
+                        id: stretch_x
+                        mode: 'filled'
+                        input_filter: "float"
+                        MDTextFieldHintText:
+                            text: 'X Factor'
+                    MDTextField:
+                        id: stretch_y
+                        mode: 'filled'
+                        input_filter: "float"
+                        MDTextFieldHintText:
+                            text: 'Y Factor'
+
+            MDCard:
+                orientation: 'vertical'
+                size_hint: 1, None
+                height: self.minimum_height
+                padding: "15dp"
+
+                MDLabel:
+                    text: "Random Crop"
+                    bold: True
+                    color: 0,0,0
+                    size_hint_y: None
+                    height: self.texture_size[1]
+
+                MDDivider:
+                    height: "1dp"
+                    md_bg_color: 1,1,1,0.2
+
+                MDGridLayout:
+                    cols: 2
+                    size_hint: 1.0, None
+                    height: "48dp"
+                    spacing: "20dp"  
+                    MDTextField:
+                        id: random_crop_width
+                        mode: 'filled'
+                        input_filter: "int"
+                        MDTextFieldHintText:
+                            text: 'Width'
+                    MDTextField:
+                        id: random_crop_height
+                        mode: 'filled'
+                        input_filter: "int"
+                        MDTextFieldHintText:
+                            text: 'Height'
+
+            MDCard:
+                orientation: 'vertical'
+                size_hint: 1, None
+                height: self.minimum_height
+                padding: "15dp"
+
+                MDLabel:
+                    text: "Add Text"
+                    bold: True
+                    color: 0,0,0
+                    size_hint_y: None
+                    height: self.texture_size[1]
+
+                MDDivider:
+                    height: "1dp"
+                    md_bg_color: 1,1,1,0.2
+
+                MDTextField:
+                    id: text_overlay
+                    mode: 'filled'
+                    MDTextFieldHintText:
+                        text: 'Text'
+
+                MDGridLayout:
+                    cols: 2
+                    size_hint: 1.0, None
+                    height: "48dp"
+                    spacing: "20dp"  
+                    MDTextField:
+                        id: text_position_x
+                        mode: 'filled'
+                        input_filter: "int"
+                        MDTextFieldHintText:
+                            text: 'X Position'
+                    MDTextField:
+                        id: text_position_y
+                        mode: 'filled'
+                        input_filter: "int"
+                        MDTextFieldHintText:
+                            text: 'Y Position'
 
     MDBoxLayout:
         adaptive_size: True
-        spacing: 10
-        padding: [10, 20, 10, 20]  
+        spacing: 20
+        padding: [20, 20, 20, 20]  # Уменьшен верхний отступ
         pos_hint: {'center_x': 0.5, 'center_y': 0.5}
         orientation: 'horizontal'
         
