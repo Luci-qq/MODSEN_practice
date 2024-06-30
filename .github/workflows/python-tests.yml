@@ -22,10 +22,6 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r .\IMG_augmentation\requirements.txt
-      - name: List directory structure
-        run: |
-          cd
-          dir /s
       - name: Test with unittests
         run: |
           python -m unittest discover .\IMG_augmentation\tests
