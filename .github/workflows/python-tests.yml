@@ -24,4 +24,4 @@ jobs:
           pip install -r .\IMG_augmentation\requirements.txt
       - name: Test with unittests
         run: |
-          python -m unittest discover .\IMG_augmentation\tests
+          python -m unittest .\IMG_augmentation\tests\test_image_processor.py
