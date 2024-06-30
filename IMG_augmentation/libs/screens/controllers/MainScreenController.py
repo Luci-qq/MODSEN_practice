@@ -190,11 +190,12 @@ class MainScreenController:
         try:
             if self.image_processor:
                 dimensions = self.image_processor.get_dimensions()
-                self.view.ids.image_layout.height_label.text = f"IMG_Height: {dimensions['height']}"
-                self.view.ids.image_layout.width_label.text = f"IMG_Width: {dimensions['width']}"
+                self.view.ids.image_layout.height_label.text = f"IMG_Height: [b]{dimensions['height']}[/b]"
+                self.view.ids.image_layout.width_label.text = f"IMG_Width: [b]{dimensions['width']}[/b]"
             else:
-                self.view.ids.image_layout.height_label.text = 'IMG_Height: N/A'
-                self.view.ids.image_layout.width_label.text = 'IMG_Width: N/A'
+                self.view.ids.image_layout.height_label.text = 'IMG_Height: [b]N/A[/b]'
+                self.view.ids.image_layout.width_label.text = 'IMG_Width: [b]N/A[/b]'
+            
         except Exception as e:
             logger.error(f"Error updating image size labels: {str(e)}")
 

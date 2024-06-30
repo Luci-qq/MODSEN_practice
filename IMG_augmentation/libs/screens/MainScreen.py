@@ -38,8 +38,11 @@ class MainScreen(MDScreen):
             img_augmentation_layout.save_image = self.save_image
 
         if self.ids.get('image_layout'): 
-            self.ids.get('image_layout').height_label.text = 'IMG_Height: N/A'
-            self.ids.get('image_layout').width_label.text = 'IMG_Width: N/A'
+            self.ids.image_layout.height_label.text = 'IMG_Height: [b]N/A[/b]'
+            self.ids.image_layout.width_label.text = 'IMG_Width: [b]N/A[/b]'
+            
+            self.ids.image_layout.height_label.markup = True
+            self.ids.image_layout.width_label.markup = True
 
     def add_file(self):
         self.controller.add_file()
