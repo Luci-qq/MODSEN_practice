@@ -23,7 +23,7 @@ class ImageAugmentationApp(MDApp):
         #ImageLayout
         Builder.load_file('libs/components/ui/ImageLayout.kv')
     
-        #MainScreen12312
+        #MainScreen
         Builder.load_file('libs/screens/MainScreen.kv')
 
 
