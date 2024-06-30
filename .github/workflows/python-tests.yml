@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python 3
@@ -21,11 +21,11 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r ./IMG_augmentation/requirements.txt
+          pip install -r .\IMG_augmentation\requirements.txt
       - name: List directory structure
         run: |
-          pwd
-          ls -R
+          cd
+          dir /s
       - name: Test with unittests
         run: |
-          python -m unittest discover ./IMG_augmentation/tests
+          python -m unittest discover .\IMG_augmentation\tests
