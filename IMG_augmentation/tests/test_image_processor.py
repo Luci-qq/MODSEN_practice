@@ -1,4 +1,4 @@
-from test_setup import *
+from tests.test_setup import *
 
 class TestImageProcessor(unittest.TestCase):
     def setUp(self):

@@ -1,5 +1,5 @@
 # tests/test_main_screen_controller_init.py
-from test_setup import *
+from tests.test_setup import *
 
 
 class TestMainScreenControllerInit(unittest.TestCase):

@@ -1,5 +1,5 @@
 # tests/test_main_screen_controller_ui_interactions.py
-from test_setup import *
+from tests.test_setup import *
 
 
 class TestMainScreenControllerUIInteractions(unittest.TestCase):
@@ -37,8 +37,8 @@ class TestMainScreenControllerUIInteractions(unittest.TestCase):
         self.controller.image_processor = Mock()
         self.controller.image_processor.get_dimensions.return_value = {'width': 100, 'height': 200}
         self.controller.update_image_size_labels()
-        self.assertEqual(self.mock_view.ids.image_layout.width_label.text, 'IMG_Width: 100')
-        self.assertEqual(self.mock_view.ids.image_layout.height_label.text, 'IMG_Height: 200')
+        self.assertEqual(self.mock_view.ids.image_layout.width_label.text, 'IMG_Width: [b]100[/b]')
+        self.assertEqual(self.mock_view.ids.image_layout.height_label.text, 'IMG_Height: [b]200[/b]')
 
     def test_apply_changes(self):
         mock_layout = Mock()
