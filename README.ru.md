@@ -18,7 +18,7 @@
 
 Repo:
 
-- [Курсы](Courses/README.md)
+- [Курсы](Courses/README.ru.md)
 
   - Http
   - Git

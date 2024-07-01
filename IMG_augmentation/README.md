@@ -39,7 +39,7 @@ List of supported augmentations:
 
 ```sh
 git clone https://github.com/Luci-qq/MODSEN_practice.git
-cd MODSEN_practice
+cd MODSEN_practice/IMG_augmentation
 ```
 
 2. Create a virtual environment:
