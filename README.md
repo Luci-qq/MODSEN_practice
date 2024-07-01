@@ -1,20 +1,23 @@
 # MODSEN_practice
 
-Репозиторий посвященной моей стажировке. Этот репозиторий предназначен для документирования моего опыта, прогресса и всех задач, над которыми я работаю во время практики.
+[English](README.md) | [Russian](README.ru.md)
+A repository dedicated to my working practice. This repository is intended to document my experiences, progress, and all the tasks I work on during my practicum.
 
-# Цель
+# Purpose
 
-Цель этого репозитория - организовать и структурировать всю информацию, связанную с моей производственной практикой.
+The purpose of this repository is to organize and structure all information related to my internship.
 
-# Структура репозитория
+# Structure of the repository
 
-Хранилище организовано таким образом, чтобы облегчить доступ к информации и упростить навигацию.
+The repository is organized in a way that makes the information easy to access and easy to navigate.
 
 Repo:
 
-- [Курсы](Courses/README.md)
+- [Courses](Courses/README.md)
 
   - Http
   - Git
 
-- [Тестовое задание(IMG_augmentation)](IMG_augmentation/README.md)
+- [Test Assignment(IMG_augmentation)](IMG_augmentation/README.md)
+
+Translated with DeepL.com (free version)
