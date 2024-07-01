@@ -19,5 +19,3 @@ Repo:
   - Git
 
 - [Test Assignment(IMG_augmentation)](IMG_augmentation/README.md)
-
-Translated with DeepL.com (free version)
