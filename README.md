@@ -1,6 +1,11 @@
 # MODSEN_practice
 
+## Localisation
+
 [English](README.md) | [Russian](README.ru.md)
+
+# Description
+
 A repository dedicated to my working practice. This repository is intended to document my experiences, progress, and all the tasks I work on during my practicum.
 
 # Purpose

@@ -35,13 +35,20 @@
 
 ## Установка и запуск
 
-1. Создание виртуального окружения:
+1. Клонирование репозитория:
+
+```sh
+git clone https://github.com/Luci-qq/MODSEN_practice.git
+cd MODSEN_practice
+```
+
+2. Создание виртуального окружения:
 
 ```sh
 python -m venv venv
 ```
 
-2.  Активация виртуального окружения:
+3. Активация виртуального окружения:
 
 - Windows:
 
@@ -55,13 +62,13 @@ python -m venv venv
 source venv/bin/activate
 ```
 
-3. Установка зависимостей:
+4. Установка зависимостей:
 
 ```sh
 pip install -r requirements.txt
 ```
 
-4. Запуск приложения:
+5. Запуск приложения:
 
 ```sh
 python main.py
