@@ -1,30 +1,30 @@
 # ImageAugmentationApp
 
-[Вернуться назад](../README.md)
+[Go back](../README.md)
 
-Приложение для аугментации изображений.
-Список поддерживаемых аугментаций:
+An application for image augmentation.
+List of supported augmentations:
 
-- Crop (обрезка)
-- Rotate (вращение)
-- Contrast (настройки контрастности)
-- Brightness (настройка яркости)
-- Saturation (настройка насыщенности)
-- Noise (добавление шума)
-- Shift (смещение)
-- Shear (сдвиг по горизонтали)
-- Stretch (растяжение)
-- Random Crop (случайная вырезка)
-- Add text (добавление текста на изображение)
+- Crop
+- Rotate
+- Contrast
+- Brightness
+- Saturation
+- Noise
+- Shift
+- Shear
+- Stretch
+- Random Crop
+- Add text
 
-## Содержание
+## Contents
 
-- [Технологии](#id_technologies)
-- [Начало работы](#id_installation)
+- [Technologies](#id_technologies)
+- [Getting Started](#id_installation)
 
 <a id='id_technologies'></a>
 
-## Технологии
+## Technologies
 
 - [Kivy](https://kivy.org/)
 - [Kivymd](https://kivymd.readthedocs.io/en/latest/index.html)
@@ -33,15 +33,15 @@
 
 <a id='id_installation'></a>
 
-## Установка и запуск
+## Installation and Running
 
-1. Создание виртуального окружения:
+1. Create a virtual environment:
 
 ```sh
 python -m venv venv
 ```
 
-2.  Активация виртуального окружения:
+2.  Activate the virtual environment:
 
 - Windows:
 
@@ -55,13 +55,13 @@ python -m venv venv
 source venv/bin/activate
 ```
 
-3. Установка зависимостей:
+3. Install dependencies:
 
 ```sh
 pip install -r requirements.txt
 ```
 
-4. Запуск приложения:
+4. Run the application:
 
 ```sh
 python main.py

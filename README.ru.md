@@ -1,6 +1,6 @@
 # MODSEN_practice
 
-[English](README.md) | [Русский](README_russian.md)
+[English](README.md) | [Русский](README.ru.md)
 Репозиторий посвященной моей производственной практике. Этот репозиторий предназначен для документирования моего опыта, прогресса и всех задач, над которыми я работаю во время практики.
 
 # Цель
@@ -17,6 +17,5 @@ Repo:
 
   - Http
   - Git
-    a
 
-- [Тестовое задание(IMG_augmentation)](IMG_augmentation/README.md)
+- [Тестовое задание(IMG_augmentation)](IMG_augmentation/README.ru.md)
