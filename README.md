@@ -1,6 +1,6 @@
 # MODSEN_practice
 
-## Язык:
+## Language:
 
 [English](README.md) | [Russian](README.ru.md)
 
