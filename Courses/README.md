@@ -1,27 +1,27 @@
 # MODSEN_Courses
 
-[Вернуться назад](../README.md)
+[Go back](../README.md)
 
-Здесь кратко описаны задачи поставленные курсом и мои решения
+The course objectives and my solutions are summarized here
 
 # HTTP
 
-Задача: получить все статусы ответов HTTP
+Task: get all HTTP response statuses
 
-## Кратко о статусах, которые можно получить используя HTTP requests:
+## A brief summary of the statuses that can be obtained using HTTP requests:
 
-1.  Информационные ответы (100 – 199)
-2.  Успешные ответы (200 – 299)
-3.  Сообщения о перенаправлении (300 – 399)
-4.  Ошибки клиента (400 – 499)
-5.  Ошибки сервера (500 – 599)
+1.  Informational responses (100 - 199)
+2.  Successful responses (200 - 299)
+3.  Redirection messages (300 - 399)
+4.  Customer Errors (400 - 499)
+5.  Server errors (500 - 599)
 
-## API которые я использовал:
+## APIs used:
 
 1. https://reqres.in/api
 2. https://jsonplaceholder.typicode.com
 
-## Решение:
+## Solution:
 
 ```plaintext
 Successful Response - 200
@@ -31,35 +31,35 @@ ErrorClient Response - 400
 ErrorClient Response - 404
 ```
 
-## Почему не смог получить 100ые и 500ые статусы ответа
+## Why couldn't get 100th and 500th answer statuses
 
-Ответы 1xx (100-е коды):
+1xx responses (100th codes):
 
-- Предназначение для информационного обмена: Коды статуса 100-е используются для промежуточных информационных ответов. Наиболее часто используется код 100 (Continue), который сообщает клиенту, что сервер получил начальную часть запроса и клиент может продолжить отправку оставшейся части.
-- Редко используются в реальной жизни: Хотя эти коды существуют, они используются редко.
-  Клиенты и серверы в основном работают с кодами 200 и выше. Например, код 101 (Switching Protocols) используется для переключения протоколов,
-  что также нечасто встречается.
-- Автоматическое управление: Большинство современных HTTP-библиотек и фреймворков автоматически управляют
-  промежуточными 1xx ответами, так что клиентские приложения редко видят эти коды напрямую.
+- Intended for information exchange: 100th status codes are used for intermediate informational responses. The most commonly used code is 100 (Continue), which tells the client that the server has received the initial portion of the request and the client can continue sending the remainder.
+- Rarely used in real life: Although these codes exist, they are rarely used.
+  Clients and servers mostly work with codes 200 and above. For example, code 101 (Switching Protocols) is used for protocol switching,
+  which is also uncommon.
+- Automatic management: Most modern HTTP libraries and frameworks automatically manage intermediate 1xx responses.
+  intermediate 1xx responses, so client applications rarely see these codes directly.
 
-Ответы 5xx (500-е коды):
+Answers 5xx (500s codes):
 
-- Серверные ошибки: Коды статуса 500-е означают, что на сервере произошла ошибка, которая мешает выполнению запроса. Например,
-  код 500 (Internal Server Error) указывает на общую проблему на стороне сервера.
-- Предполагается стабильная работа сервера: В нормальных условиях серверы настроены и протестированы для стабильной работы,
-  минимизируя возникновение ошибок. Администраторы и разработчики принимают меры по предотвращению сбоев.
-- Обработка ошибок: Современные серверные системы часто имеют механизмы для обработки и логирования ошибок,
-  а также для возврата клиентам более дружественных сообщений об ошибках, что может скрывать исходные 500-е коды.
-  Примеры:
-  100 (Continue): Клиент отправляет запрос с большой загрузкой данных и ожидает подтверждения от сервера, что можно продолжать отправку.
-  500 (Internal Server Error): Сервер не может обработать запрос из-за внутренней ошибки, например, из-за сбоя в работе кода или базы данных.
-  Таким образом, в обычной ситуации коды 100 и 500 встречаются реже из-за специфичности их применения и мер по предотвращению ошибок на сервере.
+- Server errors: 500th status codes indicate that an error has occurred on the server that is preventing the request from executing. For example,
+  500 (Internal Server Error) code indicates a general problem on the server side.
+- Assumes stable server operation: Under normal circumstances, servers are configured and tested for stable operation,
+  minimizing the occurrence of errors. Administrators and developers take steps to prevent failures.
+- Error handling: Modern server systems often have mechanisms for handling and logging errors,
+  and to return friendlier error messages to clients, which can hide the original 500s.
+  Examples:
+  100 (Continue): The client is sending a request with a large data load and is waiting for confirmation from the server that it is okay to continue sending.
+  500 (Internal Server Error): The server cannot process the request due to an internal error, such as a code or database failure.
+  Thus, in normal situations, codes 100 and 500 are less common due to the specificity of their application and measures to prevent server errors.
 
 # Git
 
-Задача полностью пройти приложение https://learngitbranching.js.org/
+Task: go through the application https://learngitbranching.js.org/
 
-## Решение:
+## Solution:
 
 ### Main:
 
@@ -67,10 +67,10 @@ ErrorClient Response - 404
 
 - 1: Introduction to Git Commits
 
-  ```plaintext
-  git commit
-  git commit
-  ```
+```plaintext
+git commit
+git commit
+```
 
 - 2: Branching in Git
 

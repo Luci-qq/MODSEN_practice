@@ -1,6 +1,6 @@
 # MODSEN_practice
 
-## Localisation
+## Язык:
 
 [English](README.md) | [Russian](README.ru.md)
 
@@ -23,4 +23,4 @@ Repo:
   - Http
   - Git
 
-- [Test Assignment(IMG_augmentation)](IMG_augmentation/README.md)
+- [Test Assignment (IMG_augmentation)](IMG_augmentation/README.md)
