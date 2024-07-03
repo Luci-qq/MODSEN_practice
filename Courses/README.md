@@ -364,3 +364,13 @@ git pull origin c2:side
 ```
 
 ![Lvl1_remote](GIt/remote_lvl2.png)
+
+# Internet
+
+Task: 
+- open a web page, set the value to LocalStorage, then retrieve that value and then delete it.
+- open a web page, set a value in a cookie,  then retrieve that value, and then delete it
+
+## Solution:
+	![Internet_output](Internet/img/output.png)
+	

@@ -22,5 +22,6 @@ Repo:
 
   - Http
   - Git
-
+  - Internet
+  
 - [Тестовое задание (IMG_augmentation)](IMG_augmentation/README.ru.md)
