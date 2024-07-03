@@ -367,10 +367,11 @@ git pull origin c2:side
 
 # Internet
 
-Task: 
+Task:
+
 - open a web page, set the value to LocalStorage, then retrieve that value and then delete it.
-- open a web page, set a value in a cookie,  then retrieve that value, and then delete it
+- open a web page, set a value in a cookie, then retrieve that value, and then delete it
 
 ## Solution:
-	![Internet_output](Internet/img/output.png)
-	
+
+![Internet_output](Internet/img/output.png)

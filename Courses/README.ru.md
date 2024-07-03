@@ -364,11 +364,14 @@ git pull origin c2:side
 ```
 
 ![Lvl1_remote](GIt/remote_lvl2.png)
+
 # Internet
 
-Задача: 
+Задача:
+
 - открыть веб-страницу, установить значение в LocalStorage, затем получить это значение, а затем удалить его.
 - открыть веб-страницу, установить значение в cookie, затем получить это значение, а затем удалить его.
 
 ## Решение:
-	![Internet_output](Internet/img/output.png)
+
+![Internet_output](Internet/img/output.png)
